@@ -2,7 +2,7 @@ import type { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from "react";
 import Link from "next/link";
 import { createHeadingId } from "@/lib/content-shared";
 import { cn } from "@/lib/utils";
-import type { MDXComponents } from "mdx/types";
+import type { MDXRemoteProps } from "next-mdx-remote/rsc";
 
 function getText(children: ReactNode): string {
   if (typeof children === "string") return children;
@@ -13,7 +13,9 @@ function getText(children: ReactNode): string {
   return "";
 }
 
-export const mdxComponents: MDXComponents = {
+type MdxComponents = NonNullable<MDXRemoteProps["components"]>;
+
+export const mdxComponents = {
   h2: ({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) => {
     const text = getText(children);
     return (
@@ -48,4 +50,4 @@ export const mdxComponents: MDXComponents = {
       </a>
     );
   }
-};
+} satisfies MdxComponents;
