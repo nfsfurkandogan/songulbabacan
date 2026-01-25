@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import CtaStrip from "@/components/cta-strip";
 import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
+import { prImages } from "@/lib/pr-images";
 
 const faqItems = [
   {
@@ -70,15 +71,40 @@ export default function HomePage() {
           <div className="relative animate-fade-up" style={{ animationDelay: "0.15s" }}>
             <div className="absolute -left-10 -top-8 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
             <div className="absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-lilac/20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift">
-              <Image
-                src="/hero-handshake.png"
-                alt="Farmasi mentorluk"
-                width={520}
-                height={520}
-                className="h-auto w-full object-cover"
-                priority
-              />
+            <div className="grid gap-4">
+              <div className="grid gap-4 sm:grid-cols-2">
+                {prImages.slice(0, 4).map((src, index) => (
+                  <div
+                    key={src}
+                    className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift"
+                  >
+                    <Image
+                      src={src}
+                      alt={`Songul Babacan PR fotografi ${index + 1}`}
+                      fill
+                      sizes="(min-width: 1024px) 16vw, (min-width: 640px) 28vw, 45vw"
+                      className="object-cover"
+                      priority={index < 2}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="flex gap-3 overflow-x-auto pb-1">
+                {prImages.slice(4).map((src, index) => (
+                  <div
+                    key={src}
+                    className="relative h-28 w-24 flex-none overflow-hidden rounded-xl border border-white/60 bg-white/80 shadow-soft"
+                  >
+                    <Image
+                      src={src}
+                      alt={`Songul Babacan etkinlik kare ${index + 5}`}
+                      fill
+                      sizes="96px"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
