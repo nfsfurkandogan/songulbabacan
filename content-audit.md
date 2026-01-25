@@ -1,0 +1,127 @@
+# İçerik Denetimi (songulbabacan.com karşılaştırması)
+
+## Özet
+- WordPress sayfa sayısı: 41
+- Statik sayfalarda eksik başlık bulunan sayfa sayısı: 24
+- Placeholder içerik tespit edilen MDX sayfaları: 6
+
+## Statik Sayfalarda Eksik Başlıklar
+- basari-hikayem (`app/basari-hikayem/page.tsx`):
+  - Songül Babacan’ın Network Marketing ve Kişisel Gelişim Yolculuğum!
+  - Zorluklar, Öğrenme Fırsatlarına Dönüştü!
+  - Kişisel Gelişim, Başarının Anahtarı!
+  - Liderlik ve Ekip Kurma Becerilerim!
+  - Dijital Pazarlama ve Online Stratejiler!
+  - Bugün Sunduğum Hizmetler
+  - Hizmetlerim Arasında:
+  - Başarıya Ulaşmak İçin Benimle Yola Çıkın
+- blog (`app/blog/page.tsx`):
+  - Categories
+  - Subscribe
+  - Gallery
+- danisman-ol (`app/danisman-ol/page.tsx`):
+  - Farmasi Danışmanı Nasıl Olunur?
+  - Farmasi Danışmanı Olmanın Avantajları ve Kazanç Potansiyeli
+- egitimler (`app/egitimler/page.tsx`):
+  - Girişimci Songül Babacan'ın Eğitimleri ile Kişisel ve Profesyonel Gelişiminizi Destekleyin!
+  - Kişisel Gelişim Eğitimleri
+  - Liderlik Eğitimleri
+  - Satış Eğitimleri
+  - Network Marketing Eğitimleri
+- farmasi (`app/farmasi/page.tsx`):
+  - Farmasi Girişimci Dünyasına Hoşgeldiniz
+- farmasi-askidan-alma (`app/farmasi-askidan-alma/page.tsx`):
+  - Farmasi Askıdan Alma Nasıl Yapılır?
+- farmasi-baslangic-paketi (`app/farmasi-baslangic-paketi/page.tsx`):
+  - Girişimcilik Yolunda İlk Adımınızı Atın!
+- farmasi-girisimci-avantajlari (`app/farmasi-girisimci-avantajlari/page.tsx`):
+  - Kendi İşinizi Kurmanın Yolu!
+- farmasi-google-ads (`app/farmasi-google-ads/page.tsx`):
+  - Ücretsiz Üye Ol, Farmasi'nin Büyülü Dünyasını Keşfet
+- farmasi-hosgeldin-hediyeleri (`app/farmasi-hosgeldin-hediyeleri/page.tsx`):
+  - Girişimciler İçin Eşsiz Fırsatlar!
+- farmasi-influencer (`app/farmasi-influencer/page.tsx`):
+  - Farmasi Influencer Nasıl Olunur?
+  - Farmasi Influencer Başvurusu Nasıl Yapılır?
+- farmasi-sponsor (`app/farmasi-sponsor/page.tsx`):
+  - Farmasi Sponsor Kodu Nedir, Ne İşe Yarar ve Önemi Nelerdir?
+- farmasi-tesvik-kampanyalari (`app/farmasi-tesvik-kampanyalari/page.tsx`):
+  - Farmasi Teşvik Kampanyaları: Başarılı Girişimciler İçin Kazanç Fırsatları
+- hakkimda (`app/hakkimda/page.tsx`):
+  - Songül Babacan Kimdir?
+  - Network marketing ile tanışmam, bu hedefime ulaşmamda büyük bir dönüm noktası oldu.
+  - Network Marketing Eğitimleri
+  - Kişisel Gelişim Programları
+  - Liderlik ve Takım Kurma
+  - Dijital Pazarlama Stratejileri
+- hakkinda (`app/hakkinda/page.tsx`):
+  - Farmasi Hakkında
+  - Doğal ve Yenilikçi Kozmetik Ürünleri ile Güvenilir Güzellik Kozmetik Şirketi
+  - Farmasi’nin Tarihi
+  - 1. Farmasi Dr. Cevdet Tuna Çay Ağacı Yağı Serisi:
+  - 2. Farmasi BB Krem Serisi:
+  - 3. Farmasi Age Reversist Serisi:
+  - 4. Farmasi Naturelle Aloe Vera Serisi:
+  - Farmasi'nin Doğal ve Çevre Dostu Yaklaşımı
+  - … (+2 başlık)
+- hizmetlerim (`app/hizmetlerim/page.tsx`):
+  - Network Marketing ve Kişisel Gelişim Alanında Profesyonel Hizmetlerimle Başarıya Ulaşın!
+  - Eğitim ve Mentorluk Programları
+  - Ekip Yönetimi ve Liderlik Becerileri
+  - Online Strateji ve Dijital Pazarlama
+  - Kendini Tanıma ve Hedef Belirleme
+  - Motivasyon ve Zaman Yönetimi
+  - Stres Yönetimi ve Öz Farkındalık
+  - Daha Güçlü Bir Liderlik Profili
+  - … (+3 başlık)
+- iletisim (`app/iletisim/page.tsx`):
+  - Temasta Kalın!
+  - Farmasi İş Geliştirme Kariyer Gelişim Merkezi
+  - İletişim Formu
+- katalog (`app/katalog/page.tsx`):
+  - Farmasi Ekim 2024 Kataloğu
+  - Farmasi Katalog
+- kayit-ol (`app/kayit-ol/page.tsx`):
+  - Farmasi'ye Katılın!
+  - Farmasi Kayıt Olma Süreci
+  - Kayıt Olduktan Sonra Neler Yapabilirsiniz?
+  - Farmasi Kayıt Olma Rehberi:
+- kazanc-plani (`app/kazanc-plani/page.tsx`):
+  - Farmasi Kazanç Planı Nedir?
+- network-marketingde-basariya-giden-yol-e-kitap-ile-guclenin (`app/network-marketingde-basariya-giden-yol-e-kitap-ile-guclenin/page.tsx`):
+  - Network Marketing’de Başarıya Giden Yol: E-Kitap ile Güçlenin
+  - Farmasi İle İhracat Şampiyonu Olmanın Gururunu Yaşıyoruz!
+  - Network Marketing’de Başarıya Giden Yol: E-Kitap ile Güçlenin
+  - Network Marketing Nedir?
+  - Neden Bir E-Kitaba İhtiyacınız Var?
+  - Network Marketing’de Başarı İçin 5 Altın Kural
+  - E-Kitap Satın Almanın Avantajları
+  - Network Marketing E-Kitabınızı Bugün Satın Alın!
+- prim-sistemi (`app/prim-sistemi/page.tsx`):
+  - Farmasi Yeni Prim Sistemi ve Seviyeler
+  - Farmasi Prim Sistemi Nasıl İşler?
+  - Farmasi Prim Nasıl Kullanılır?
+  - Farmasi’de Prim Nasıl Alınır?
+  - Farmasi Lider Yetiştirme Primi Nedir?
+  - Farmasi Lider Yetiştirme Primi Seviye Oranları
+  - Farmasi Prim Ödeme Tarihleri
+  - Farmasi Prim Nereye Yatar?
+  - … (+4 başlık)
+- sertifikalar (`app/sertifikalar/page.tsx`):
+  - Sertifikalarımızı İnceleyin!
+- temsilci-ol (`app/temsilci-ol/page.tsx`):
+  - Farmasi Temsilci Olmak İçin Ne Yapmalıyım?
+
+## Placeholder İçerik Bulunan MDX Sayfalar
+- farmasi-baslangic-paketi.mdx
+- farmasi-girisimci-avantajlari.mdx
+- farmasi-hosgeldin-hediyeleri.mdx
+- farmasi-tesvik-kampanyalari.mdx
+- hakkimda.mdx
+- network-marketingde-basariya-giden-yol-e-kitap-ile-guclenin.mdx
+
+## Dikkat Edilmesi Gereken Uyuşmazlıklar
+- "/hakkinda" sayfası şu an mentorluk/kişisel sayfa gibi; WordPress tarafında ise "Farmasi Hakkında" içeriği var.
+- "/hakkimda" WordPress içeriğinde "Join Membership/Benefit" ve Lorem placeholder bölümleri var; yerel sayfada daha iyi bir anlatım var ama özgün detaylar eklenmeli.
+- "/organizasyon-semasi" WordPress içeriğinde başlık/başlıklar görünmüyor; görsel/şema kaynağı netleştirilmeli.
+- "/farmasi-google-ads" WordPress sayfası form ağırlıklı; yerel sayfada form akışı ve alanlar kontrol edilmeli.

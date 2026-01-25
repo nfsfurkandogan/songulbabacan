@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#e6007e" />
+
+    <title>İletişim — Songül Babacan</title>
+    <meta
+      name="description"
+      content="İletişim bilgileri ve mesaj formu: telefon, e‑posta ve adres."
+    />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script defer src="/assets/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">İçeriğe atla</a>
+
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Ana sayfa">
+          <img class="brand-logo" src="/assets/img/logo.png" alt="Songül Babacan" />
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Menüyü aç/kapat"
+          aria-controls="site-nav"
+          aria-expanded="false"
+          data-nav-toggle
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Ana menü" data-nav>
+          <a class="nav-link" href="/farmasi/">Farmasi</a>
+          <a class="nav-link" href="/kayit-ol/">Kayıt Ol</a>
+          <a class="nav-link" href="/blog/">Blog</a>
+          <a class="nav-link" href="/basari-hikayem/">Başarı Hikayem</a>
+          <a class="nav-link nav-cta" href="/kayit-ol/">Farmasi Kayıt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <div class="page-hero-copy">
+            <p class="hero-kicker">İletişim</p>
+            <h1 class="page-title">Temasta Kalın!</h1>
+            <p class="page-subtitle">
+              Herhangi bir sorunuz, öneriniz veya geri bildiriminiz için formu kullanabilir ya da doğrudan iletişime
+              geçebilirsiniz.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="tel:+905423941889">Ara</a>
+              <a class="btn btn-ghost" href="mailto:songulbabacanofficial@gmail.com">E‑posta Gönder</a>
+            </div>
+          </div>
+          <div class="page-hero-media" aria-hidden="true">
+            <img class="page-hero-image" src="/assets/img/portrait.jpg" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div class="split-copy">
+            <div class="section-head">
+              <h2 class="section-title">Farmasi İş Geliştirme Kariyer Gelişim Merkezi</h2>
+              <p class="section-subtitle">İletişim bilgilerimiz</p>
+            </div>
+
+            <div class="contact-cards">
+              <a class="contact-card" href="tel:+905423941889">
+                <span class="contact-card-title">Telefon</span>
+                <span class="contact-card-value">+90 (542) 394 18 89</span>
+              </a>
+              <a class="contact-card" href="mailto:songulbabacanofficial@gmail.com">
+                <span class="contact-card-title">E‑posta</span>
+                <span class="contact-card-value">songulbabacanofficial@gmail.com</span>
+              </a>
+              <a
+                class="contact-card"
+                href="https://www.google.com/maps/search/?api=1&query=Uzun%20Sok.%20Cumhuriyet%20Mah.%20%C4%B0nciler%20Sok.%20%C4%B0nci%20Sitesi%20C%20Blok%20No%3A6%20Kat%3A1%20D%3A2%20Ortahisar%2FTrabzon"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="contact-card-title">Adres</span>
+                <span class="contact-card-value">
+                  Uzun Sok. Cumhuriyet Mah. İnciler Sok. İnci Sitesi C Blok No:6 Kat:1 D:2 Ortahisar/Trabzon
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="split-media">
+            <form class="form card" id="form" data-contact-form>
+              <h3 class="card-title">İletişim Formu</h3>
+              <p class="card-text">Form, e‑posta uygulamanızı açar (backend eklemek isterseniz bağlayabiliriz).</p>
+
+              <label class="field">
+                <span class="field-label">Ad Soyad</span>
+                <input class="field-input" name="name" autocomplete="name" required />
+              </label>
+
+              <label class="field">
+                <span class="field-label">E‑posta</span>
+                <input class="field-input" type="email" name="email" autocomplete="email" required />
+              </label>
+
+              <label class="field">
+                <span class="field-label">Telefon (opsiyonel)</span>
+                <input class="field-input" name="phone" autocomplete="tel" inputmode="tel" />
+              </label>
+
+              <label class="field">
+                <span class="field-label">Mesaj</span>
+                <textarea class="field-input" name="message" rows="5" required></textarea>
+              </label>
+
+              <button class="btn btn-primary" type="submit">Gönder</button>
+              <p class="form-hint" aria-live="polite" data-form-hint></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img class="footer-logo" src="/assets/img/logo.png" alt="Songül Babacan" loading="lazy" decoding="async" />
+          <p class="footer-text">Fayda odaklı rehberlik, net strateji ve sürdürülebilir büyüme.</p>
+        </div>
+        <div class="footer-grid">
+          <div>
+            <p class="footer-title">Hızlı Link</p>
+            <a class="footer-link" href="/farmasi/">Farmasi</a>
+            <a class="footer-link" href="/kayit-ol/">Kayıt Ol</a>
+            <a class="footer-link" href="/blog/">Blog</a>
+            <a class="footer-link" href="/basari-hikayem/">Başarı Hikayem</a>
+            <a class="footer-link" href="/iletisim/">İletişim</a>
+          </div>
+          <div>
+            <p class="footer-title">İletişim</p>
+            <a class="footer-link" href="tel:+905423941889">+90 (542) 394 18 89</a>
+            <a class="footer-link" href="mailto:songulbabacanofficial@gmail.com">songulbabacanofficial@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© <span data-year></span> Songül Babacan</p>
+        <p class="footer-bottom-right"><a href="/privacy.html">Gizlilik</a></p>
+      </div>
+    </footer>
+    <script>
+      document.querySelector("[data-year]").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

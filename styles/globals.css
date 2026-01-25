@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1.5rem;
+  }
+
+  * {
+    border-color: rgba(15, 23, 42, 0.12);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+    background-image: radial-gradient(900px 520px at 8% 0%, rgba(230, 0, 126, 0.08), transparent 60%),
+      radial-gradient(900px 520px at 92% 20%, rgba(123, 97, 255, 0.08), transparent 60%),
+      linear-gradient(180deg, #faf8fc, #ffffff);
+    min-height: 100vh;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-ink;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: rgba(230, 0, 126, 0.2);
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-semibold;
+  }
+
+  .section-kicker {
+    @apply uppercase tracking-[0.25em] text-xs text-ink-muted font-semibold;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-border bg-white/80 shadow-soft backdrop-blur;
+  }
+
+  .cta-card {
+    @apply rounded-2xl border border-border bg-gradient-to-br from-white/80 via-white/70 to-white/90 shadow-lift;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-border bg-white/80 px-4 py-2 text-sm text-ink-muted;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(230, 0, 126, 0.4), rgba(123, 97, 255, 0.4));
+    z-index: -1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
+
+.prose {
+  --tw-prose-body: #0f172a;
+  --tw-prose-headings: #0f172a;
+  --tw-prose-links: #e6007e;
+  --tw-prose-bold: #0f172a;
+  --tw-prose-counters: #64748b;
+  --tw-prose-bullets: #64748b;
+  --tw-prose-hr: rgba(15, 23, 42, 0.12);
+  --tw-prose-quotes: #0f172a;
+  --tw-prose-quote-borders: rgba(230, 0, 126, 0.2);
+  --tw-prose-captions: #475569;
+  --tw-prose-code: #0f172a;
+  --tw-prose-pre-code: #e2e8f0;
+  --tw-prose-pre-bg: #0f172a;
+  --tw-prose-th-borders: rgba(15, 23, 42, 0.12);
+  --tw-prose-td-borders: rgba(15, 23, 42, 0.12);
+}
+
+.prose a {
+  text-decoration-color: rgba(230, 0, 126, 0.35);
+}
