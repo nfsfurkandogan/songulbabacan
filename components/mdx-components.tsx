@@ -1,7 +1,8 @@
-import type { ReactNode } from "react";
+import type { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from "react";
 import Link from "next/link";
 import { createHeadingId } from "@/lib/content-shared";
 import { cn } from "@/lib/utils";
+import type { MDXComponents } from "mdx/types";
 
 function getText(children: ReactNode): string {
   if (typeof children === "string") return children;
@@ -12,8 +13,8 @@ function getText(children: ReactNode): string {
   return "";
 }
 
-export const mdxComponents = {
-  h2: ({ children, ...props }) => {
+export const mdxComponents: MDXComponents = {
+  h2: ({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) => {
     const text = getText(children);
     return (
       <h2 id={createHeadingId(text)} className="scroll-mt-24" {...props}>
@@ -21,7 +22,7 @@ export const mdxComponents = {
       </h2>
     );
   },
-  h3: ({ children, ...props }) => {
+  h3: ({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) => {
     const text = getText(children);
     return (
       <h3 id={createHeadingId(text)} className="scroll-mt-24" {...props}>
@@ -29,9 +30,12 @@ export const mdxComponents = {
       </h3>
     );
   },
-  a: ({ href, children, ...props }) => {
-    const className = cn("text-brand hover:text-brand-dark", (props as any).className);
-    if (href?.startsWith("/")) {
+  a: ({ href, children, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) => {
+    const className = cn("text-brand hover:text-brand-dark", props.className);
+    if (!href) {
+      return <span className={className}>{children}</span>;
+    }
+    if (href.startsWith("/")) {
       return (
         <Link href={href} className={className}>
           {children}
