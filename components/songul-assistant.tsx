@@ -254,7 +254,7 @@ export default function SongulAssistant() {
   };
 
   return (
-    <div className="fixed bottom-5 left-5 z-40 flex flex-col items-start gap-3 md:bottom-8 md:left-8">
+    <div className="fixed bottom-4 left-4 z-40 flex flex-col items-start gap-3 md:bottom-8 md:left-8">
       <button
         type="button"
         className={cn(
@@ -274,7 +274,7 @@ export default function SongulAssistant() {
       {isOpen && (
         <div
           id="songul-assistant-panel"
-          className="w-[320px] overflow-hidden rounded-3xl border border-border bg-white/95 shadow-lift backdrop-blur sm:w-[360px]"
+          className="w-[calc(100vw-2rem)] max-w-[360px] overflow-hidden rounded-3xl border border-border bg-white/95 shadow-lift backdrop-blur"
           role="dialog"
           aria-label="Songül Asistan"
         >

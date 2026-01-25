@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import BlogCard from "@/components/blog-card";
-import type { PostMeta } from "@/lib/content";
+import type { PostMeta } from "@/lib/content-shared";
 import { cn } from "@/lib/utils";
 
 interface BlogListProps {

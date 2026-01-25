@@ -13,10 +13,12 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-white text-ink font-sans antialiased;
+    overflow-x: hidden;
     background-image: radial-gradient(900px 520px at 8% 0%, rgba(230, 0, 126, 0.08), transparent 60%),
       radial-gradient(900px 520px at 92% 20%, rgba(123, 97, 255, 0.08), transparent 60%),
       linear-gradient(180deg, #faf8fc, #ffffff);

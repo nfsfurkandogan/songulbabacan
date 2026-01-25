@@ -2,23 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
-
-export interface TocItem {
-  level: number;
-  text: string;
-  slug: string;
-}
-
-export interface PostMeta {
-  slug: string;
-  title: string;
-  description: string;
-  date: string;
-  category?: string;
-  tags: string[];
-  cover?: string;
-  readingTime: string;
-}
+import type { PostMeta, TocItem } from "./content-shared";
+import { createHeadingId } from "./content-shared";
 
 export interface Post extends PostMeta {
   content: string;
@@ -26,33 +11,6 @@ export interface Post extends PostMeta {
 }
 
 const contentDir = path.join(process.cwd(), "content", "blog");
-
-const turkishMap: Record<string, string> = {
-  "ç": "c",
-  "ğ": "g",
-  "ı": "i",
-  "ö": "o",
-  "ş": "s",
-  "ü": "u",
-  "Ç": "c",
-  "Ğ": "g",
-  "İ": "i",
-  "Ö": "o",
-  "Ş": "s",
-  "Ü": "u"
-};
-
-function slugify(value: string) {
-  return value
-    .split("")
-    .map((char) => turkishMap[char] ?? char)
-    .join("")
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-");
-}
 
 function stripMarkdown(content: string) {
   return content
@@ -74,7 +32,7 @@ function getToc(content: string): TocItem[] {
 
     const level = match[1].length;
     const text = match[2].replace(/\{#.*?\}/, "").trim();
-    toc.push({ level, text, slug: slugify(text) });
+    toc.push({ level, text, slug: createHeadingId(text) });
   }
 
   return toc;
@@ -122,12 +80,4 @@ export function getAllTags(posts: PostMeta[]) {
   const tagSet = new Set<string>();
   posts.forEach((post) => post.tags.forEach((tag) => tagSet.add(tag)));
   return Array.from(tagSet).sort();
-}
-
-export function buildPostUrl(slug: string) {
-  return `/blog/${slug}`;
-}
-
-export function createHeadingId(text: string) {
-  return slugify(text);
 }

@@ -121,7 +121,7 @@ export default function Header() {
       <div className="container flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3">
           <span className="sr-only">Songül Babacan</span>
-          <img src="/logo.png" alt="Songül Babacan" className="h-10 w-auto" />
+          <img src="/logo.png" alt="Songül Babacan" className="h-11 w-auto md:h-12" />
         </Link>
         <button
           type="button"

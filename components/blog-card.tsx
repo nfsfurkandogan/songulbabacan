@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { buildPostUrl, PostMeta } from "@/lib/content";
+import { buildPostUrl, type PostMeta } from "@/lib/content-shared";
 import { Badge } from "@/components/ui/badge";
 
 interface BlogCardProps {

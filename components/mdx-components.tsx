@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { createHeadingId } from "@/lib/content";
+import { createHeadingId } from "@/lib/content-shared";
 import { cn } from "@/lib/utils";
 
 function getText(children: ReactNode): string {
