@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { Button } from "@/components/ui/button";
 import JsonLd from "@/components/json-ld";
 import JoinApplicationForm from "@/components/join-application-form";
+import { prImages } from "@/lib/pr-images";
 
 export const metadata = createMetadata({
   title: "Farmasi Kayıt Ol",
@@ -13,6 +14,7 @@ export const metadata = createMetadata({
 });
 
 const requirements = ["İsim Soyisim", "Telefon", "Şehir (opsiyonel)", "Not (opsiyonel)"];
+const heroImage = prImages[4];
 
 export default function SignupPage() {
   return (
@@ -47,8 +49,8 @@ export default function SignupPage() {
           <div className="relative">
             <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
             <Image
-              src="/ig/ig-09.jpg"
-              alt=""
+              src={heroImage}
+              alt="Songül Babacan"
               width={520}
               height={520}
               className="rounded-2xl border border-white/60 object-cover shadow-lift"

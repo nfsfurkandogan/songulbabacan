@@ -6,6 +6,7 @@ import JsonLd from "@/components/json-ld";
 import CtaStrip from "@/components/cta-strip";
 import JoinTrigger from "@/components/join-trigger";
 import { Button } from "@/components/ui/button";
+import { prImages } from "@/lib/pr-images";
 
 export const metadata = createMetadata({
   title: "Hakkımda",
@@ -43,6 +44,9 @@ const serviceItems = [
   "Kendi başarı hikayenizi yazmanız için stratejik planlama"
 ];
 
+const heroImage = prImages[1];
+const galleryImages = [prImages[5], prImages[6], prImages[7]];
+
 export default function AboutMePage() {
   return (
     <>
@@ -78,7 +82,7 @@ export default function AboutMePage() {
           <div className="relative">
             <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
             <Image
-              src="/portrait.png"
+              src={heroImage}
               alt="Songül Babacan"
               width={520}
               height={620}
@@ -106,6 +110,34 @@ export default function AboutMePage() {
               <div key={item.title} className="glass-card p-5">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <p className="mt-2 text-sm text-ink-muted">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container space-y-6">
+          <div className="max-w-2xl space-y-3">
+            <p className="section-kicker">Galeri</p>
+            <h2 className="section-title">Etkinlik ve eğitimlerden kareler</h2>
+            <p className="text-ink-muted">
+              Sahne arkası, ekip buluşmaları ve eğitim anlarından seçmeler.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {galleryImages.map((src, index) => (
+              <div
+                key={src}
+                className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-soft"
+              >
+                <Image
+                  src={src}
+                  alt={`Songül Babacan etkinlik fotoğrafı ${index + 1}`}
+                  fill
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>

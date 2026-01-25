@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import JoinTrigger from "@/components/join-trigger";
 import { Button } from "@/components/ui/button";
+import { prImages } from "@/lib/pr-images";
 
 export const metadata = createMetadata({
   title: "Başarı Hikayem",
@@ -37,6 +38,9 @@ const supportItems = [
   "Ekip kurma, eğitim ve sistem"
 ];
 
+const heroImage = prImages[3];
+const supportImage = prImages[8];
+
 export default function SuccessStoryPage() {
   return (
     <>
@@ -63,8 +67,8 @@ export default function SuccessStoryPage() {
           <div className="relative">
             <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
             <Image
-              src="/hero-spa.jpg"
-              alt=""
+              src={heroImage}
+              alt="Songül Babacan"
               width={520}
               height={520}
               className="rounded-2xl border border-white/60 object-cover shadow-lift"
@@ -116,8 +120,8 @@ export default function SuccessStoryPage() {
           </div>
           <div className="glass-card p-6">
             <Image
-              src="/product-1.jpg"
-              alt=""
+              src={supportImage}
+              alt="Songül Babacan etkinlik fotoğrafı"
               width={420}
               height={520}
               className="h-full w-full rounded-xl object-cover"
