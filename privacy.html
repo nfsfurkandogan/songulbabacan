@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#e6007e" />
+    <title>Gizlilik — Songül Babacan</title>
+    <meta name="description" content="Gizlilik ve çerez bilgilendirmesi." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script defer src="/assets/js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">İçeriğe atla</a>
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Ana sayfa">
+          <img class="brand-logo" src="/assets/img/logo.png" alt="Songül Babacan" />
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Menüyü aç/kapat"
+          aria-controls="site-nav"
+          aria-expanded="false"
+          data-nav-toggle
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Ana menü" data-nav>
+          <a class="nav-link" href="/farmasi/">Farmasi</a>
+          <a class="nav-link" href="/kayit-ol/">Kayıt Ol</a>
+          <a class="nav-link" href="/blog/">Blog</a>
+          <a class="nav-link" href="/basari-hikayem/">Başarı Hikayem</a>
+          <a class="nav-link nav-cta" href="/kayit-ol/">Farmasi Kayıt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="section">
+      <div class="container prose">
+        <h1>Gizlilik</h1>
+        <p>
+          Bu sayfa temel bir taslaktır. Form, e‑posta uygulamanızı açacak şekilde çalışır; sitede kişisel veri
+          depolanmaz. Analytics, reklam vb. eklenecekse KVKK/GDPR metni güncellenmelidir.
+        </p>
+        <p>
+          İletişim için: <a href="mailto:songulbabacanofficial@gmail.com">songulbabacanofficial@gmail.com</a>
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <p>© <span data-year></span> Songül Babacan</p>
+        <p class="footer-bottom-right"><a href="/">Ana sayfa</a></p>
+      </div>
+    </footer>
+    <script>
+      document.querySelector("[data-year]").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
