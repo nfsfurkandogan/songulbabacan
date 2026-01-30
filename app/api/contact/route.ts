@@ -7,34 +7,39 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Eksik alan" }, { status: 400 });
   }
 
-  const to = process.env.CONTACT_TO_EMAIL ?? "songulbabacanofficial@gmail.com";
+  const to = process.env.CONTACT_TO_EMAIL ?? "officialsongulbabacan@gmail.com";
   const from = process.env.CONTACT_FROM_EMAIL ?? "Songul Babacan <onboarding@resend.dev>";
   const resendKey = process.env.RESEND_API_KEY;
 
-  if (resendKey) {
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resendKey}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        from,
-        to: [to],
-        subject: `Yeni İletişim: ${name}`,
-        html: `
-          <strong>Ad:</strong> ${name}<br />
-          <strong>E-posta:</strong> ${email}<br />
-          <strong>Telefon:</strong> ${phone ?? "-"}<br /><br />
-          <strong>Mesaj:</strong><br />
-          ${message}
-        `
-      })
-    });
+  if (!resendKey) {
+    return NextResponse.json(
+      { error: "E-posta servisi yapılandırılmadı." },
+      { status: 500 }
+    );
+  }
 
-    if (!response.ok) {
-      return NextResponse.json({ error: "E-posta gönderilemedi" }, { status: 500 });
-    }
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${resendKey}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      from,
+      to: [to],
+      subject: `Yeni İletişim: ${name}`,
+      html: `
+        <strong>Ad:</strong> ${name}<br />
+        <strong>E-posta:</strong> ${email}<br />
+        <strong>Telefon:</strong> ${phone ?? "-"}<br /><br />
+        <strong>Mesaj:</strong><br />
+        ${message}
+      `
+    })
+  });
+
+  if (!response.ok) {
+    return NextResponse.json({ error: "E-posta gönderilemedi" }, { status: 500 });
   }
 
   return NextResponse.json({ ok: true });

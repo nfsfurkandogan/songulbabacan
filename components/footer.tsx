@@ -5,10 +5,10 @@ import { siteConfig } from "@/lib/siteConfig";
 export default function Footer() {
   return (
     <footer className="border-t border-white/40 bg-white/70">
-      <div className="container grid gap-10 py-14 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+      <div className="container grid gap-10 py-12 lg:grid-cols-[1.2fr_1.4fr_0.9fr]">
         <div className="space-y-4">
           <img src="/logo.png" alt="Songül Babacan" className="h-10 w-auto" />
-          <p className="text-sm text-ink-muted">
+          <p className="max-w-md text-sm text-ink-muted">
             Modern kadın girişimciler için yapılandırılmış mentor programları, Farmasi fırsatları
             ve sürdürülebilir kazanç sistemleri.
           </p>
@@ -39,7 +39,7 @@ export default function Footer() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink-muted">
             Hızlı Linkler
           </p>
-          <ul className="space-y-2 text-sm">
+          <ul className="grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2 xl:grid-cols-3">
             {siteConfig.footerLinks.quick.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="text-ink-muted hover:text-ink">
@@ -66,7 +66,7 @@ export default function Footer() {
                 {siteConfig.contact.email}
               </a>
             </p>
-            <p className="flex items-start gap-2">
+            <p className="flex items-start gap-2 leading-relaxed">
               <MapPin className="mt-0.5 h-4 w-4" />
               <span>Türkiye genelinde dijital mentorluk & ekip yönetimi</span>
             </p>
@@ -76,7 +76,7 @@ export default function Footer() {
       <div className="border-t border-white/40">
         <div className="container flex flex-col items-start justify-between gap-4 py-6 text-xs text-ink-soft md:flex-row md:items-center">
           <span>© {new Date().getFullYear()} Songül Babacan. Tüm hakları saklıdır.</span>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             {siteConfig.footerLinks.legal.map((item) => (
               <Link key={item.href} href={item.href} className="hover:text-ink">
                 {item.label}

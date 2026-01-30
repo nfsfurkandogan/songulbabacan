@@ -10,7 +10,7 @@ export const siteConfig = {
   contact: {
     phone: "+905423941889",
     phoneDisplay: "+90 542 394 18 89",
-    email: "songulbabacanofficial@gmail.com",
+    email: "officialsongulbabacan@gmail.com",
     whatsapp: "https://wa.me/905423941889"
   },
   social: {

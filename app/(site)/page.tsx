@@ -8,6 +8,10 @@ import CtaStrip from "@/components/cta-strip";
 import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import { prImages } from "@/lib/pr-images";
+import galleryOne from "@/assets/img/aa1f31c2-e723-4df8-bf0c-7e10294a3822.jpeg";
+import galleryTwo from "@/assets/img/222ee8b2-6a94-4877-a568-2d39eeaac24e.jpeg";
+import galleryThree from "@/assets/img/b4f852e6-0770-47a4-ab9b-a93275fd095b.jpeg";
+import galleryFour from "@/assets/img/f9caa5f3-19ac-4529-8cb4-d1342d1a582e.jpeg";
 
 const faqItems = [
   {
@@ -28,12 +32,12 @@ const faqItems = [
 ];
 
 const heroImage = prImages[0];
-const galleryImages = [prImages[2], prImages[3], prImages[5], prImages[6], prImages[9], prImages[10]];
+const galleryImages = [galleryOne, galleryTwo, galleryThree, galleryFour, prImages[6], prImages[9]];
 
 export default function HomePage() {
   return (
     <>
-      <section className="section bg-hero-sheen">
+      <section className="section bg-hero-sheen py-12 md:py-16">
         <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.05s" }}>
             <div className="flex flex-wrap gap-2">
@@ -74,13 +78,13 @@ export default function HomePage() {
           <div className="relative animate-fade-up" style={{ animationDelay: "0.15s" }}>
             <div className="absolute -left-10 -top-8 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
             <div className="absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-lilac/20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift">
+            <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift lg:mx-0">
               <Image
                 src={heroImage}
                 alt="Songül Babacan"
                 width={520}
                 height={640}
-                className="h-auto w-full object-cover"
+                className="h-[420px] w-full object-cover md:h-[480px]"
                 priority
               />
             </div>
@@ -237,7 +241,7 @@ export default function HomePage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {galleryImages.map((src, index) => (
               <div
-                key={src}
+                key={typeof src === "string" ? src : src.src}
                 className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-soft"
               >
                 <Image
