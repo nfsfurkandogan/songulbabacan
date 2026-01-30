@@ -107,27 +107,24 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="space-y-4">
-            <div className="relative overflow-hidden rounded-2xl border border-brand/20 bg-transparent shadow-lift ring-1 ring-brand/20">
+            <div className="overflow-hidden rounded-2xl shadow-lift ring-1 ring-brand/10">
               <Image
                 src={heroImage}
                 alt="Farmasi ürünleri"
                 width={520}
                 height={620}
-                className="h-[320px] w-full object-contain md:h-[360px]"
+                className="h-[320px] w-full object-cover md:h-[360px]"
               />
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {[storyOne, storyTwo].map((src, index) => (
-                <div
-                  key={src.src}
-                  className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand/20 bg-transparent p-2 shadow-soft ring-1 ring-brand/20"
-                >
+                <div key={src.src} className="overflow-hidden rounded-2xl shadow-soft ring-1 ring-brand/10">
                   <Image
                     src={src}
                     alt={`Songül Babacan ekip görseli ${index + 1}`}
-                    fill
-                    sizes="(min-width: 1024px) 18vw, (min-width: 640px) 40vw, 100vw"
-                    className="object-contain"
+                    width={320}
+                    height={420}
+                    className="h-[220px] w-full object-cover md:h-[260px]"
                   />
                 </div>
               ))}
@@ -158,16 +155,13 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[storyOne, storyTwo, storyThree, storyFour].map((src, index) => (
-              <div
-                key={src.src}
-                className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand/20 bg-transparent p-2 shadow-soft ring-1 ring-brand/20"
-              >
+              <div key={src.src} className="overflow-hidden rounded-2xl shadow-soft ring-1 ring-brand/10">
                 <Image
                   src={src}
                   alt={`Songül Babacan ekip kareleri ${index + 1}`}
-                  fill
-                  sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 100vw"
-                  className="object-contain"
+                  width={320}
+                  height={420}
+                  className="h-[220px] w-full object-cover md:h-[260px]"
                 />
               </div>
             ))}
@@ -197,16 +191,13 @@ export default function AboutPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               {["/product-1.jpg", "/product-2.jpg", "/product-3.jpg", "/hero-spa.jpg"].map(
                 (src, index) => (
-                  <div
-                    key={src}
-                    className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand/20 bg-transparent p-2 shadow-soft ring-1 ring-brand/20"
-                  >
+                  <div key={src} className="overflow-hidden rounded-2xl shadow-soft ring-1 ring-brand/10">
                     <Image
                       src={src}
                       alt={`Farmasi ürün görseli ${index + 1}`}
-                      fill
-                      sizes="(min-width: 1024px) 36vw, (min-width: 640px) 45vw, 100vw"
-                      className="object-contain"
+                      width={360}
+                      height={460}
+                      className="h-[240px] w-full object-cover md:h-[280px]"
                     />
                   </div>
                 )

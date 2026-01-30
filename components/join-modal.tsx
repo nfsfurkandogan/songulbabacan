@@ -151,9 +151,9 @@ export default function JoinModal() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-h-[90vh] overflow-hidden p-0">
+      <DialogContent className="max-h-[95vh] max-w-4xl overflow-y-auto p-0">
         <div className="grid gap-0 md:grid-cols-[0.9fr_1.1fr]">
-          <div className="relative hidden bg-cta-gradient px-6 py-8 text-white md:block md:px-8 md:py-10">
+          <div className="relative hidden bg-cta-gradient px-6 py-8 text-white md:block md:px-8 md:py-9">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">Üyelik</p>
             <DialogTitle className="mt-3 text-2xl text-white md:text-3xl">
               Farmasi ile güvenli bir başlangıç yapın.
@@ -188,7 +188,7 @@ export default function JoinModal() {
               </Button>
             </div>
           </div>
-          <div className="space-y-5 px-5 py-6 md:px-8 md:py-10">
+          <div className="space-y-4 px-5 py-6 md:px-8 md:py-9">
             <div className="rounded-2xl border border-border bg-cta-gradient/10 p-4 md:hidden">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink-muted">
                 Üyelik

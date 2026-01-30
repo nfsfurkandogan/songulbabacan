@@ -53,7 +53,7 @@ export default function HomePage() {
                 </Link>
               </Button>
               <JoinTrigger variant="outline">Üye Ol</JoinTrigger>
-              <Button asChild variant="ghost">
+              <Button asChild variant="outline">
                 <Link href="/kazanc-plani">Kazanç Planı</Link>
               </Button>
             </div>
