@@ -41,12 +41,12 @@ const steps = [
 const sponsorCode = siteConfig.sponsorCode ?? "0001109";
 
 function QuickJoinForm({ onSuccess }: { onSuccess?: () => void }) {
-  const [status, setStatus] = useState<"idle" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [hint, setHint] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setStatus("idle");
+    setStatus("loading");
     setHint("");
 
     const formData = new FormData(event.currentTarget);
@@ -66,16 +66,26 @@ function QuickJoinForm({ onSuccess }: { onSuccess?: () => void }) {
       `Telefon: ${phone}`
     ].join("\n");
 
-    const whatsappUrl = `${siteConfig.contact.whatsapp}?text=${encodeURIComponent(message)}`;
-    const popup = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-    if (!popup) {
-      setStatus("error");
-      setHint("Tarayıcı açılır pencereyi engelledi. Lütfen tekrar deneyin.");
-      return;
-    }
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          phone,
+          message
+        })
+      });
 
-    event.currentTarget.reset();
-    onSuccess?.();
+      if (!response.ok) throw new Error("Gönderilemedi");
+      setStatus("success");
+      setHint("Başvurunuz alındı. En kısa sürede dönüş yapacağım.");
+      event.currentTarget.reset();
+      onSuccess?.();
+    } catch (error) {
+      setStatus("error");
+      setHint("Bir hata oluştu. Lütfen tekrar deneyin.");
+    }
   };
 
   return (
@@ -93,11 +103,15 @@ function QuickJoinForm({ onSuccess }: { onSuccess?: () => void }) {
           <Input name="phone" autoComplete="tel" inputMode="tel" required />
         </label>
       </div>
-      <Button type="submit" className="w-full">
-        WhatsApp ile Gönder
+      <Button type="submit" className="w-full" disabled={status === "loading"}>
+        {status === "loading" ? "Gönderiliyor..." : "Başvuruyu Gönder"}
       </Button>
       {hint && (
-        <p className={`text-sm ${status === "error" ? "text-red-600" : "text-ink-muted"}`}>
+        <p
+          className={`text-sm ${
+            status === "error" ? "text-red-600" : "text-ink-muted"
+          }`}
+        >
           {hint}
         </p>
       )}
@@ -176,7 +190,7 @@ export default function JoinModal() {
             <DialogHeader>
               <DialogTitle className="text-xl md:text-2xl">Hızlı Başvuru</DialogTitle>
               <DialogDescription>
-                Sadece isim ve telefon ile WhatsApp başvurunuzu hemen oluşturun.
+                Sadece isim ve telefon ile başvurunuzu hemen gönderin.
               </DialogDescription>
             </DialogHeader>
             <QuickJoinForm onSuccess={() => setOpen(false)} />

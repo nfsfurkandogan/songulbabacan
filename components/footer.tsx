@@ -76,6 +76,12 @@ export default function Footer() {
       <div className="border-t border-white/40">
         <div className="container flex flex-col items-start justify-between gap-4 py-6 text-xs text-ink-soft md:flex-row md:items-center">
           <span>© {new Date().getFullYear()} Songül Babacan. Tüm hakları saklıdır.</span>
+          <span className="text-ink-soft">
+            Designed by{" "}
+            <Link href="https://nfssoft.com" target="_blank" rel="noopener noreferrer" className="font-semibold text-ink hover:text-brand">
+              Nfs Soft
+            </Link>
+          </span>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {siteConfig.footerLinks.legal.map((item) => (
               <Link key={item.href} href={item.href} className="hover:text-ink">

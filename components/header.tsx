@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Check, ChevronDown } from "lucide-react";
+import { Check, ChevronDown, Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/siteConfig";
 import { Button } from "@/components/ui/button";
 import JoinTrigger from "@/components/join-trigger";
@@ -121,6 +121,9 @@ export default function Header() {
       <div className="container flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3">
           <span className="sr-only">Songül Babacan</span>
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-brand/20 bg-white/80 text-brand shadow-soft">
+            <Sparkles className="h-4 w-4" />
+          </span>
           <img src="/logo.png" alt="Songül Babacan" className="h-11 w-auto md:h-12" />
         </Link>
         <button
