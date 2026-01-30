@@ -40,7 +40,7 @@ const steps = [
 
 const sponsorCode = siteConfig.sponsorCode ?? "0001109";
 
-function QuickJoinForm({ onSuccess }: { onSuccess?: () => void }) {
+function QuickJoinForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [hint, setHint] = useState("");
 
@@ -52,6 +52,7 @@ function QuickJoinForm({ onSuccess }: { onSuccess?: () => void }) {
     const formData = new FormData(event.currentTarget);
     const name = String(formData.get("name") ?? "").trim();
     const phone = String(formData.get("phone") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
 
     if (!name || !phone) {
       setStatus("error");
@@ -63,7 +64,8 @@ function QuickJoinForm({ onSuccess }: { onSuccess?: () => void }) {
       "Farmasi Hızlı Başvuru",
       `Sponsor Kod: ${sponsorCode}`,
       `İsim Soyisim: ${name}`,
-      `Telefon: ${phone}`
+      `Telefon: ${phone}`,
+      `E-posta: ${email || "-"}`
     ].join("\n");
 
     try {
@@ -72,6 +74,7 @@ function QuickJoinForm({ onSuccess }: { onSuccess?: () => void }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name,
+          email: email || undefined,
           phone,
           message
         })
@@ -80,8 +83,6 @@ function QuickJoinForm({ onSuccess }: { onSuccess?: () => void }) {
       if (!response.ok) throw new Error("Gönderilemedi");
       setStatus("success");
       setHint("Başvurunuz alındı. En kısa sürede dönüş yapacağım.");
-      event.currentTarget.reset();
-      onSuccess?.();
     } catch (error) {
       setStatus("error");
       setHint("Bir hata oluştu. Lütfen tekrar deneyin.");
@@ -96,15 +97,35 @@ function QuickJoinForm({ onSuccess }: { onSuccess?: () => void }) {
       <div className="grid gap-4">
         <label className="space-y-2 text-sm font-semibold text-ink">
           <span>İsim Soyisim</span>
-          <Input name="name" autoComplete="name" required />
+          <Input name="name" autoComplete="name" required disabled={status === "success"} />
         </label>
         <label className="space-y-2 text-sm font-semibold text-ink">
           <span>Telefon</span>
-          <Input name="phone" autoComplete="tel" inputMode="tel" required />
+          <Input
+            name="phone"
+            autoComplete="tel"
+            inputMode="tel"
+            required
+            disabled={status === "success"}
+          />
+        </label>
+        <label className="space-y-2 text-sm font-semibold text-ink">
+          <span>E-posta (opsiyonel)</span>
+          <Input
+            name="email"
+            type="email"
+            autoComplete="email"
+            placeholder="ornek@email.com"
+            disabled={status === "success"}
+          />
         </label>
       </div>
-      <Button type="submit" className="w-full" disabled={status === "loading"}>
-        {status === "loading" ? "Gönderiliyor..." : "Başvuruyu Gönder"}
+      <Button type="submit" className="w-full" disabled={status !== "idle"}>
+        {status === "loading"
+          ? "Gönderiliyor..."
+          : status === "success"
+            ? "Başvuru Alındı"
+            : "Başvuruyu Gönder"}
       </Button>
       {hint && (
         <p
@@ -193,7 +214,7 @@ export default function JoinModal() {
                 Sadece isim ve telefon ile başvurunuzu hemen gönderin.
               </DialogDescription>
             </DialogHeader>
-            <QuickJoinForm onSuccess={() => setOpen(false)} />
+            <QuickJoinForm />
             <div className="hidden rounded-2xl border border-border bg-white/80 p-4 text-sm text-ink-muted md:block">
               Detaylı kayıt tercih ederseniz, kayıt sayfasından tüm alanları doldurabilirsiniz.
             </div>
