@@ -29,7 +29,7 @@ const certificateFocus = [
 export default function CertificatesPage() {
   return (
     <>
-      <section className="section bg-hero-sheen">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container space-y-6">
           <p className="section-kicker">Sertifikalar</p>
           <h1 className="text-4xl font-semibold md:text-5xl">

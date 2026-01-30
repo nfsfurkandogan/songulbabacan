@@ -38,7 +38,7 @@ const trainingGallery = [prImages[1], prImages[2], prImages[7], prImages[8]];
 export default function TrainingsPage() {
   return (
     <>
-      <section className="section bg-hero-sheen">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-5">
             <p className="section-kicker">Eğitimler</p>

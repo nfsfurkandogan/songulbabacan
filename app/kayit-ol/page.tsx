@@ -18,7 +18,7 @@ const heroImage = "/songul4.jpeg";
 export default function SignupPage() {
   return (
     <>
-      <section className="section bg-hero-sheen py-12 md:py-16">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-5">
             <div className="inline-flex flex-wrap items-center gap-2 rounded-full border border-border bg-white/80 px-4 py-2 text-xs font-semibold text-ink-muted">

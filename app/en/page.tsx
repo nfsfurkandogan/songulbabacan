@@ -63,7 +63,7 @@ const galleryImages = [prImages[1], prImages[2], prImages[4], prImages[5]];
 export default function EnglishLandingPage() {
   return (
     <>
-      <section className="section bg-hero-sheen">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6">
             <div className="flex flex-wrap gap-2">

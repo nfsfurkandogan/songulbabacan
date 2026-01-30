@@ -29,7 +29,7 @@ const referenceAreas = [
 export default function ReferencesPage() {
   return (
     <>
-      <section className="section bg-hero-sheen">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container space-y-6">
           <p className="section-kicker">Referanslar</p>
           <h1 className="text-4xl font-semibold md:text-5xl">

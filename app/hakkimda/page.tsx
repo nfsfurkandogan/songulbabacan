@@ -50,7 +50,7 @@ const galleryImages = [prImages[5], prImages[6], prImages[7]];
 export default function AboutMePage() {
   return (
     <>
-      <section className="section bg-hero-sheen">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-5">
             <p className="section-kicker">Hakkımda</p>

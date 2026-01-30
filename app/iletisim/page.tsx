@@ -18,7 +18,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="section bg-hero-sheen">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container grid gap-10 lg:grid-cols-[1fr_1fr]">
           <div className="space-y-5">
             <p className="section-kicker">İletişim</p>

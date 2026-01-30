@@ -17,7 +17,7 @@ export const metadata = createMetadata({
 export default function EarningsPlanPage() {
   return (
     <>
-      <section className="section bg-hero-sheen py-12 md:py-16">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-6">
             <p className="section-kicker">Kazanç Planı</p>

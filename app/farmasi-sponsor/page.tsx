@@ -19,7 +19,7 @@ export const metadata = createMetadata({
 export default function FarmasiSponsorPage() {
   return (
     <>
-      <section className="section bg-hero-sheen">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container space-y-5">
           <p className="section-kicker">Farmasi Sponsor</p>
           <h1 className="text-4xl font-semibold md:text-5xl">{page.title}</h1>

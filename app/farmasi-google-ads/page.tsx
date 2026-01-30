@@ -26,7 +26,7 @@ const highlights = [
 export default function FarmasiGoogleAdsPage() {
   return (
     <>
-      <section className="section bg-hero-sheen">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container space-y-5">
           <p className="section-kicker">Farmasi Google Ads</p>
           <h1 className="text-4xl font-semibold md:text-5xl">

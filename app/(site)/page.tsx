@@ -33,7 +33,7 @@ const galleryImages = [prImages[1], prImages[2], prImages[4], prImages[5], prIma
 export default function HomePage() {
   return (
     <>
-      <section className="section bg-hero-sheen py-12 md:py-16">
+      <section className="section bg-hero-sheen hero-compact">
         <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.05s" }}>
             <div className="flex flex-wrap gap-2">
