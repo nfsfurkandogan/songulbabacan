@@ -5,7 +5,6 @@ import { siteConfig } from "@/lib/siteConfig";
 import { Button } from "@/components/ui/button";
 import JsonLd from "@/components/json-ld";
 import JoinApplicationForm from "@/components/join-application-form";
-import { prImages } from "@/lib/pr-images";
 
 export const metadata = createMetadata({
   title: "Farmasi Kayıt Ol",
@@ -14,14 +13,14 @@ export const metadata = createMetadata({
 });
 
 const requirements = ["İsim Soyisim", "Telefon", "Şehir (opsiyonel)", "Not (opsiyonel)"];
-const heroImage = prImages[4];
+const heroImage = "/songul4.jpeg";
 
 export default function SignupPage() {
   return (
     <>
-      <section className="section bg-hero-sheen">
+      <section className="section bg-hero-sheen py-12 md:py-16">
         <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="space-y-6">
+          <div className="space-y-5">
             <div className="inline-flex flex-wrap items-center gap-2 rounded-full border border-border bg-white/80 px-4 py-2 text-xs font-semibold text-ink-muted">
               <span>Farmasi Türkiye Girişimci Başvurusu</span>
               <span className="h-1 w-1 rounded-full bg-brand/70" />
@@ -50,10 +49,10 @@ export default function SignupPage() {
             <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
             <Image
               src={heroImage}
-              alt="Songül Babacan"
+              alt="Farmasi üyelik avantajları görseli"
               width={520}
-              height={520}
-              className="rounded-2xl border border-white/60 object-cover shadow-lift"
+              height={680}
+              className="h-[360px] w-full rounded-2xl border border-white/60 object-cover shadow-lift md:h-[420px]"
               priority
             />
           </div>
@@ -64,7 +63,7 @@ export default function SignupPage() {
         <div className="container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="space-y-4">
             <p className="section-kicker">Neler gerekiyor?</p>
-            <h2 className="section-title">Başvuru için sadece 2 bilgi yeterli: isim ve telefon.</h2>
+            <h2 className="section-title">Başvuru için en gerekli iki bilgi: isim ve telefon.</h2>
             <ul className="space-y-2 text-sm text-ink-muted">
               {requirements.map((item) => (
                 <li key={item} className="flex items-start gap-2">
@@ -73,9 +72,11 @@ export default function SignupPage() {
                 </li>
               ))}
             </ul>
-            <p className="text-sm text-ink-muted">
-              Gönder dediğinizde WhatsApp açılır ve mesaj otomatik hazırlanır (backend yok).
-            </p>
+            <div className="glass-card space-y-2 p-4 text-sm text-ink-muted">
+              <p className="font-semibold text-ink">Nasıl çalışır?</p>
+              <p>Gönder dediğinizde WhatsApp açılır ve mesaj otomatik hazırlanır.</p>
+              <p>İsterseniz e-posta ile de gönderebilirsiniz.</p>
+            </div>
           </div>
           <div className="glass-card p-6">
             <JoinApplicationForm />

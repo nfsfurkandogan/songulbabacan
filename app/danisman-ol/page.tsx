@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { createMetadata } from "@/lib/seo";
@@ -82,6 +83,15 @@ export default function ConsultantPage() {
                   </li>
                 ))}
               </ul>
+            </div>
+            <div className="glass-card overflow-hidden">
+              <Image
+                src="/songul3.jpeg"
+                alt="Evinizde çalışırken gelir elde etme görseli"
+                width={720}
+                height={1080}
+                className="h-auto w-full object-contain"
+              />
             </div>
           </aside>
         </div>

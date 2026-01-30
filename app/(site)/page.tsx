@@ -8,10 +8,6 @@ import CtaStrip from "@/components/cta-strip";
 import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import { prImages } from "@/lib/pr-images";
-import galleryOne from "@/assets/img/aa1f31c2-e723-4df8-bf0c-7e10294a3822.jpeg";
-import galleryTwo from "@/assets/img/222ee8b2-6a94-4877-a568-2d39eeaac24e.jpeg";
-import galleryThree from "@/assets/img/b4f852e6-0770-47a4-ab9b-a93275fd095b.jpeg";
-import galleryFour from "@/assets/img/f9caa5f3-19ac-4529-8cb4-d1342d1a582e.jpeg";
 
 const faqItems = [
   {
@@ -32,7 +28,7 @@ const faqItems = [
 ];
 
 const heroImage = prImages[0];
-const galleryImages = [galleryOne, galleryTwo, galleryThree, galleryFour, prImages[6], prImages[9]];
+const galleryImages = [prImages[1], prImages[2], prImages[4], prImages[5], prImages[8], prImages[10]];
 
 export default function HomePage() {
   return (
@@ -45,11 +41,10 @@ export default function HomePage() {
               <Badge variant="muted">Premium Mentorluk</Badge>
             </div>
             <h1 className="text-balance text-4xl font-semibold md:text-5xl lg:text-6xl">
-              Kazanmak için başla. Çünkü sen buna değersin.
+              Kazanmak için başla.
             </h1>
             <p className="text-lg text-ink-muted md:text-xl">
-              Farmasi ile kendi gelir sistemini kur, kadın girişimci topluluğumuzda yer al ve
-              mentorluk desteğiyle büyü.
+              Farmasi ile kendi gelirini kur. Kadın girişimci topluluğumuzda mentorlukla büyü.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild>
@@ -64,9 +59,9 @@ export default function HomePage() {
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {[
-                { title: "1:1 Mentorluk", desc: "Kişisel yol haritası" },
-                { title: "Ekip Desteği", desc: "Topluluk ve eğitim" },
-                { title: "Marka Gücü", desc: "Farmasi altyapısı" }
+                { title: "Mentorluk", desc: "Kişisel yol haritası" },
+                { title: "Ekip", desc: "Topluluk ve eğitim" },
+                { title: "Altyapı", desc: "Farmasi gücü" }
               ].map((item) => (
                 <div key={item.title} className="glass-card p-4">
                   <p className="text-sm font-semibold">{item.title}</p>
@@ -241,7 +236,7 @@ export default function HomePage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {galleryImages.map((src, index) => (
               <div
-                key={typeof src === "string" ? src : src.src}
+                key={src}
                 className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-soft"
               >
                 <Image
@@ -261,8 +256,21 @@ export default function HomePage() {
         <div className="container grid gap-10 lg:grid-cols-[1fr_0.9fr]">
           <div className="space-y-6">
             <p className="section-kicker">Sık Sorulan Sorular</p>
-            <h2 className="section-title">Merak ettiklerinizi yanıtlayalım</h2>
-            <p className="text-ink-muted">Program, gelir modeli ve çalışma düzeni hakkında kısa cevaplar.</p>
+            <h2 className="section-title">Merak ettiklerini netleştirelim</h2>
+            <p className="text-ink-muted">
+              Program, gelir modeli ve çalışma düzeni hakkında kısa ve net cevaplar.
+            </p>
+            <div className="space-y-2 text-sm text-ink-muted">
+              <p className="font-semibold text-ink">Öne çıkan başlıklar</p>
+              <p>Üyelik süreci, eğitim desteği, kazancın görünür olması.</p>
+            </div>
+            <div className="text-sm text-ink-muted">
+              Daha detaylı görüşmek istersen{" "}
+              <Link href="/iletisim" className="font-semibold text-ink hover:text-brand">
+                iletişim
+              </Link>{" "}
+              sayfasından yazabilirsin.
+            </div>
           </div>
           <Accordion type="single" collapsible className="glass-card p-6">
             {faqItems.map((item) => (
@@ -277,13 +285,28 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-4">
+          <div className="space-y-5">
             <p className="section-kicker">İletişim</p>
-            <h2 className="section-title">Sorularınızı birlikte yanıtlayalım</h2>
+            <h2 className="section-title">Sorularını birlikte netleştirelim</h2>
             <p className="text-ink-muted">
               Size uygun mentorluk planını belirlemek ve kazanç hedefinizi netleştirmek için
-              iletişime geçebilirsiniz.
+              hızlıca iletişime geçebilirsiniz.
             </p>
+            <div className="space-y-2 text-sm text-ink-muted">
+              <p className="font-semibold text-ink">Neleri konuşuyoruz?</p>
+              <ul className="space-y-2">
+                {[
+                  "Hedeflerinize göre mentorluk planı",
+                  "Kazanç planı ve ilk adımlar",
+                  "Üyelik ve başvuru süreci"
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <div className="flex flex-wrap gap-3">
               <Button asChild>
                 <Link href={siteConfig.contact.whatsapp} target="_blank" rel="noopener noreferrer">
@@ -295,10 +318,22 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="glass-card space-y-3 p-6 text-sm text-ink-muted">
-            <p>Telefon: {siteConfig.contact.phoneDisplay}</p>
-            <p>E-posta: {siteConfig.contact.email}</p>
-            <p>Çalışma Alanı: Türkiye genelinde dijital mentorluk</p>
+          <div className="glass-card space-y-4 p-6 text-sm text-ink-muted">
+            <div className="space-y-1">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-ink-muted">
+                İletişim Bilgileri
+              </p>
+              <p className="text-ink">Telefon</p>
+              <p>{siteConfig.contact.phoneDisplay}</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-ink">E-posta</p>
+              <p>{siteConfig.contact.email}</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-ink">Çalışma Alanı</p>
+              <p>Türkiye genelinde dijital mentorluk</p>
+            </div>
           </div>
         </div>
       </section>

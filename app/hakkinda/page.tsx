@@ -5,6 +5,10 @@ import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import CtaStrip from "@/components/cta-strip";
 import { Button } from "@/components/ui/button";
+import storyOne from "@/assets/img/aa1f31c2-e723-4df8-bf0c-7e10294a3822.jpeg";
+import storyTwo from "@/assets/img/222ee8b2-6a94-4877-a568-2d39eeaac24e.jpeg";
+import storyThree from "@/assets/img/b4f852e6-0770-47a4-ab9b-a93275fd095b.jpeg";
+import storyFour from "@/assets/img/f9caa5f3-19ac-4529-8cb4-d1342d1a582e.jpeg";
 
 export const metadata = createMetadata({
   title: "Hakkında",
@@ -13,7 +17,7 @@ export const metadata = createMetadata({
   path: "/hakkinda"
 });
 
-const heroImage = "/hero-spa.jpg";
+const heroImage = storyThree;
 
 const highlights = [
   {
@@ -67,12 +71,12 @@ const growthItems = [
 export default function AboutPage() {
   return (
     <>
-      <section className="section bg-hero-sheen">
-        <div className="container grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="section bg-hero-sheen py-12 md:py-16">
+        <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-5">
             <p className="section-kicker">Hakkında</p>
             <h1 className="text-4xl font-semibold md:text-5xl">
-              Farmasi hakkında: güvenilir içerikler, güçlü üretim ve girişimcilik fırsatları.
+              Farmasi ile güvenilir içerik, güçlü üretim ve girişimcilik fırsatları.
             </h1>
             <p className="text-ink-muted md:text-lg">
               Farmasi; doğal içeriklere, yerli üretime ve geniş ürün gamına odaklanan bir kozmetik
@@ -89,16 +93,45 @@ export default function AboutPage() {
                 </Link>
               </Button>
             </div>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {[
+                { title: "Yerel üretim", desc: "Güvenilir içerikler" },
+                { title: "Geniş ürün", desc: "Cilt, makyaj, bakım" },
+                { title: "Mentorluk", desc: "Adım adım destek" }
+              ].map((item) => (
+                <div key={item.title} className="glass-card p-4 text-sm">
+                  <p className="font-semibold text-ink">{item.title}</p>
+                  <p className="text-xs text-ink-muted">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="relative">
-            <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
-            <Image
-              src={heroImage}
-              alt="Farmasi ürünleri"
-              width={520}
-              height={620}
-              className="rounded-2xl border border-white/60 object-cover shadow-lift"
-            />
+          <div className="space-y-4">
+            <div className="relative overflow-hidden rounded-2xl border border-brand/20 bg-transparent shadow-lift ring-1 ring-brand/20">
+              <Image
+                src={heroImage}
+                alt="Farmasi ürünleri"
+                width={520}
+                height={620}
+                className="h-[320px] w-full object-contain md:h-[360px]"
+              />
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[storyOne, storyTwo].map((src, index) => (
+                <div
+                  key={src.src}
+                  className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand/20 bg-transparent p-2 shadow-soft ring-1 ring-brand/20"
+                >
+                  <Image
+                    src={src}
+                    alt={`Songül Babacan ekip görseli ${index + 1}`}
+                    fill
+                    sizes="(min-width: 1024px) 18vw, (min-width: 640px) 40vw, 100vw"
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -115,52 +148,70 @@ export default function AboutPage() {
       </section>
 
       <section className="section">
-        <div className="container grid gap-10 lg:grid-cols-[1fr_1fr]">
-          <div className="space-y-4">
-            <p className="section-kicker">Ürün Yelpazesi</p>
-            <h2 className="section-title">Her ihtiyaca uygun Farmasi kategorileri</h2>
+        <div className="container space-y-8">
+          <div className="max-w-2xl space-y-3">
+            <p className="section-kicker">Topluluktan Kareler</p>
+            <h2 className="section-title">Ekip buluşmaları ve eğitimlerden seçmeler</h2>
             <p className="text-ink-muted">
-              Farmasi, hem günlük bakım ihtiyaçlarını hem de profesyonel kozmetik beklentilerini
-              karşılayacak geniş bir ürün ailesi sunar.
+              Gerçek sahneler, gerçek enerji. Mentorluk sürecimizin içinden anlar.
             </p>
-            <ul className="space-y-2 text-sm text-ink-muted">
-              {categories.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brand" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {["/product-1.jpg", "/product-2.jpg", "/product-3.jpg", "/hero-spa.jpg"].map(
-              (src, index) => (
-                <div
-                  key={src}
-                  className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-soft"
-                >
-                  <Image
-                    src={src}
-                    alt={`Farmasi ürün görseli ${index + 1}`}
-                    fill
-                    sizes="(min-width: 1024px) 36vw, (min-width: 640px) 45vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-              )
-            )}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[storyOne, storyTwo, storyThree, storyFour].map((src, index) => (
+              <div
+                key={src.src}
+                className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand/20 bg-transparent p-2 shadow-soft ring-1 ring-brand/20"
+              >
+                <Image
+                  src={src}
+                  alt={`Songül Babacan ekip kareleri ${index + 1}`}
+                  fill
+                  sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 100vw"
+                  className="object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section bg-section-glow">
-        <div className="container space-y-8">
-          <div className="max-w-2xl space-y-3">
-            <p className="section-kicker">Seriler</p>
-            <h2 className="section-title">Öne çıkan Farmasi serileri</h2>
-            <p className="text-ink-muted">
-              En çok tercih edilen bakım serileriyle rutininizi güçlendirin.
-            </p>
+      <section className="section">
+        <div className="container space-y-10">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
+            <div className="space-y-4">
+              <p className="section-kicker">Ürün Yelpazesi</p>
+              <h2 className="section-title">Her ihtiyaca uygun Farmasi kategorileri</h2>
+              <p className="text-ink-muted">
+                Farmasi, hem günlük bakım ihtiyaçlarını hem de profesyonel kozmetik beklentilerini
+                karşılayacak geniş bir ürün ailesi sunar.
+              </p>
+              <ul className="space-y-2 text-sm text-ink-muted">
+                {categories.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-brand" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {["/product-1.jpg", "/product-2.jpg", "/product-3.jpg", "/hero-spa.jpg"].map(
+                (src, index) => (
+                  <div
+                    key={src}
+                    className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-brand/20 bg-transparent p-2 shadow-soft ring-1 ring-brand/20"
+                  >
+                    <Image
+                      src={src}
+                      alt={`Farmasi ürün görseli ${index + 1}`}
+                      fill
+                      sizes="(min-width: 1024px) 36vw, (min-width: 640px) 45vw, 100vw"
+                      className="object-contain"
+                    />
+                  </div>
+                )
+              )}
+            </div>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {seriesHighlights.map((item) => (

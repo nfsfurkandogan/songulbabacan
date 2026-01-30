@@ -116,18 +116,18 @@ export default function JoinModal() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-h-[90vh] overflow-y-auto p-0">
+      <DialogContent className="max-h-[90vh] overflow-hidden p-0">
         <div className="grid gap-0 md:grid-cols-[0.9fr_1.1fr]">
-          <div className="relative bg-cta-gradient px-8 py-10 text-white">
+          <div className="relative hidden bg-cta-gradient px-6 py-8 text-white md:block md:px-8 md:py-10">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/80">Üyelik</p>
-            <DialogTitle className="mt-4 text-3xl text-white">
+            <DialogTitle className="mt-3 text-2xl text-white md:text-3xl">
               Farmasi ile güvenli bir başlangıç yapın.
             </DialogTitle>
             <DialogDescription className="mt-3 text-sm text-white/80">
               Sizi dinleyip hedeflerinize göre bir yol haritası çıkarıyoruz. Kişisel mentorluk ve
               ekip desteği ile sürdürülebilir kazanç modeli oluşturuyoruz.
             </DialogDescription>
-            <ul className="mt-6 space-y-3 text-sm">
+            <ul className="mt-5 space-y-3 text-sm">
               {benefits.map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 text-white" />
@@ -135,7 +135,7 @@ export default function JoinModal() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild className="bg-white text-brand hover:bg-white/90">
                 <Link
                   href={siteConfig.contact.whatsapp}
@@ -153,37 +153,56 @@ export default function JoinModal() {
               </Button>
             </div>
           </div>
-          <div className="space-y-6 px-8 py-10">
+          <div className="space-y-5 px-5 py-6 md:px-8 md:py-10">
+            <div className="rounded-2xl border border-border bg-cta-gradient/10 p-4 md:hidden">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink-muted">
+                Üyelik
+              </p>
+              <p className="mt-2 text-lg font-semibold text-ink">
+                Farmasi ile güvenli bir başlangıç yapın.
+              </p>
+              <p className="mt-2 text-sm text-ink-muted">
+                Kısa bir görüşmeyle hedeflerinizi netleştirip planınızı oluşturuyoruz.
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-ink-muted">
+                {benefits.slice(0, 3).map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-brand" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <DialogHeader>
-              <DialogTitle className="text-2xl">Hızlı Başvuru</DialogTitle>
+              <DialogTitle className="text-xl md:text-2xl">Hızlı Başvuru</DialogTitle>
               <DialogDescription>
                 Sadece isim ve telefon ile WhatsApp başvurunuzu hemen oluşturun.
               </DialogDescription>
             </DialogHeader>
             <QuickJoinForm onSuccess={() => setOpen(false)} />
-            <div className="rounded-2xl border border-border bg-white/80 p-4 text-sm text-ink-muted">
+            <div className="hidden rounded-2xl border border-border bg-white/80 p-4 text-sm text-ink-muted md:block">
               Detaylı kayıt tercih ederseniz, kayıt sayfasından tüm alanları doldurabilirsiniz.
             </div>
-            <div className="space-y-4">
+            <div className="hidden space-y-3 md:block">
               <p className="text-sm font-semibold text-ink">Üyelik yolculuğu</p>
-              {steps.map((item, index) => (
-                <div key={item.title} className="glass-card flex gap-4 p-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand/10 text-sm font-semibold text-brand">
-                    {String(index + 1).padStart(2, "0")}
+              <div className="grid gap-3 md:grid-cols-3">
+                {steps.map((item, index) => (
+                  <div key={item.title} className="glass-card p-4">
+                    <div className="text-xs font-semibold text-brand">
+                      {String(index + 1).padStart(2, "0")}
+                    </div>
+                    <p className="mt-2 text-sm font-semibold">{item.title}</p>
+                    <p className="mt-1 text-xs text-ink-muted">{item.desc}</p>
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold">{item.title}</p>
-                    <p className="text-xs text-ink-muted">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-            <div className="flex items-center gap-4 rounded-2xl border border-border bg-white/80 p-4">
+            <div className="hidden items-center gap-3 rounded-2xl border border-border bg-white/80 p-4 md:flex">
               <Image
                 src="/portrait.png"
                 alt="Songül Babacan"
-                width={72}
-                height={72}
+                width={56}
+                height={56}
                 className="rounded-full"
               />
               <div>

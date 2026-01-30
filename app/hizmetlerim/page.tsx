@@ -7,6 +7,10 @@ import CtaStrip from "@/components/cta-strip";
 import JoinTrigger from "@/components/join-trigger";
 import { Button } from "@/components/ui/button";
 import { prImages } from "@/lib/pr-images";
+import storyOne from "@/assets/img/aa1f31c2-e723-4df8-bf0c-7e10294a3822.jpeg";
+import storyTwo from "@/assets/img/222ee8b2-6a94-4877-a568-2d39eeaac24e.jpeg";
+import storyThree from "@/assets/img/b4f852e6-0770-47a4-ab9b-a93275fd095b.jpeg";
+import storyFour from "@/assets/img/f9caa5f3-19ac-4529-8cb4-d1342d1a582e.jpeg";
 
 export const metadata = createMetadata({
   title: "Hizmetlerim",
@@ -16,22 +20,16 @@ export const metadata = createMetadata({
 
 const serviceHighlights = [
   {
-    title: "Network Marketing Rehberliği",
-    description:
-      "Doğru strateji ve eğitimle sürdürülebilir büyüme, yeni pazarlama yöntemleriyle görünürlük."
+    title: "Mentorluk planı",
+    description: "Kişisel hedeflere göre yol haritası ve haftalık takip."
   },
   {
-    title: "Kişisel Gelişim Mentorluğu",
-    description:
-      "İş hayatı, ilişkiler ve kariyer gelişiminde rehberlik ile güçlü bir dönüşüm."
+    title: "Ekip gelişimi",
+    description: "Topluluk desteği, eğitim ritmi ve sürdürülebilir motivasyon."
   },
   {
-    title: "Takım Kurma Becerileri",
-    description: "Takım kurma becerilerinizi güçlendirerek sağlam bir ekip altyapısı kurma."
-  },
-  {
-    title: "Sürekli Gelişim",
-    description: "Kendinizi sürekli geliştirerek network marketing’de fark yaratma."
+    title: "Dijital görünürlük",
+    description: "İçerik planı ve satış kanalı optimizasyonu."
   }
 ];
 
@@ -52,23 +50,14 @@ const serviceDetails = [
       "Sosyal medya içerik planı, görünürlük ve dijital satış kanalı optimizasyonu."
   },
   {
-    title: "Kendini tanıma ve hedef belirleme",
-    description:
-      "Kişisel hedeflerin netleşmesi, güçlü yanların ortaya çıkarılması ve yol haritası."
-  },
-  {
     title: "Motivasyon ve zaman yönetimi",
     description:
       "Günlük disiplin, önceliklendirme ve sürdürülebilir çalışma rutini oluşturma."
-  },
-  {
-    title: "Stres yönetimi ve öz farkındalık",
-    description:
-      "Zorlu süreçlerde dengeyi koruma, iç motivasyonu güçlendirme ve zihinsel dayanıklılık."
   }
 ];
 
-const galleryImages = [prImages[0], prImages[2], prImages[8], prImages[9]];
+const heroImage = storyTwo;
+const galleryImages = [storyOne, storyThree, storyFour, prImages[9]];
 
 export default function ServicesPage() {
   return (
@@ -78,15 +67,11 @@ export default function ServicesPage() {
           <div className="space-y-5">
             <p className="section-kicker">Hizmetlerim</p>
             <h1 className="text-4xl font-semibold md:text-5xl">
-              Network marketing ve kişisel gelişim odağında profesyonel hizmetler.
+              Mentorluk, ekip yönetimi ve dijital büyüme desteği.
             </h1>
             <p className="text-ink-muted md:text-lg">
-              İş dünyasında başarılı olmanın en önemli yollarından biri, kendinizi sürekli
-              geliştirmeniz ve doğru stratejilerle hareket etmenizdir. Özellikle Network marketing
-              gibi hızla büyüyen bir sektörde hem kişisel gelişim hem de etkili pazarlama
-              yöntemleriyle fark yaratmanız gerekiyor. Network marketing ve kişisel gelişim
-              hizmetlerim, işinizde yükselmenize ve hedeflerinize ulaşmanıza yardımcı olmak için
-              tasarlandı.
+              Net bir hedef, doğru strateji ve düzenli mentorlukla sürdürülebilir bir gelir modeli
+              kurmanıza yardımcı oluyorum. Başlangıçtan büyümeye kadar tüm adımlarda yanınızdayım.
             </p>
             <div className="flex flex-wrap gap-3">
               <JoinTrigger>Üye Ol</JoinTrigger>
@@ -104,13 +89,28 @@ export default function ServicesPage() {
               </Button>
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {serviceHighlights.map((item) => (
-              <div key={item.title} className="glass-card p-5">
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm text-ink-muted">{item.description}</p>
-              </div>
-            ))}
+          <div className="space-y-5">
+            <div className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift">
+              <Image
+                src={heroImage}
+                alt="Songül Babacan mentorluk"
+                width={520}
+                height={620}
+                className="h-[420px] w-full object-cover md:h-[460px]"
+                priority
+              />
+            </div>
+            <ul className="space-y-3 text-sm text-ink-muted">
+              {serviceHighlights.map((item) => (
+                <li key={item.title} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand" />
+                  <div>
+                    <p className="font-semibold text-ink">{item.title}</p>
+                    <p>{item.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -119,28 +119,23 @@ export default function ServicesPage() {
         <div className="container space-y-8">
           <div className="space-y-3">
             <p className="section-kicker">Hizmetler</p>
-            <h2 className="section-title">
-              Network Marketing ve Kişisel Gelişim Alanında Profesyonel Hizmetlerimle Başarıya
-              Ulaşın!
-            </h2>
+            <h2 className="section-title">Net, uygulanabilir bir gelişim planı</h2>
+            <p className="text-ink-muted">
+              Hedeflerinize göre sade bir yol haritası çiziyor, her adımda ölçülebilir sonuçlar
+              hedefliyoruz.
+            </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="glass-card p-6">
               <h3 className="text-xl font-semibold">Network Marketing</h3>
               <p className="mt-3 text-sm text-ink-muted">
-                Network marketing, doğru strateji ve eğitimle inanılmaz fırsatlar sunan bir iş
-                modelidir. Ancak başarıya ulaşmak için kendinizi bu alanda sürekli geliştirmeniz,
-                yeni pazarlama yöntemlerini öğrenmeniz ve takım kurma becerilerinizi güçlendirmeniz
-                gerekir. İşte bu noktada sunduğum Network Marketing hizmetleri devreye giriyor.
+                Doğru strateji, ürün bilgisi ve ekip yönetimiyle güçlü bir temel kuruyoruz.
               </p>
             </div>
             <div className="glass-card p-6">
               <h3 className="text-xl font-semibold">Kişisel Gelişim</h3>
               <p className="mt-3 text-sm text-ink-muted">
-                Network marketing’de başarılı olmanın en önemli şartlarından biri, güçlü bir
-                kişisel gelişim yolculuğuna çıkmaktır. İş hayatında, ilişkilerde ve kariyer
-                gelişiminde size rehberlik edecek kişisel gelişim hizmetlerim, sadece iş dünyasında
-                değil, hayatın her alanında daha güçlü olmanıza yardımcı olur.
+                Hedef netliği, disiplin ve sürdürülebilir motivasyonla büyümeyi destekliyoruz.
               </p>
             </div>
           </div>
@@ -154,17 +149,11 @@ export default function ServicesPage() {
           </div>
           <div className="cta-card space-y-4 p-7">
             <p className="text-sm font-semibold text-brand-600">
-              Hedeflerinize ulaşmanız için buradayım!
+              Hedeflerinize ulaşmanız için buradayım.
             </p>
             <p className="text-sm text-ink-muted md:text-base">
-              Network marketing ve kişisel gelişim alanında sunduğum profesyonel hizmetlerle işinizi
-              ve kendinizi bir sonraki seviyeye taşımak için bana ulaşabilirsiniz. Hizmetlerim
-              hakkında daha fazla bilgi almak ya da size özel bir program oluşturmak için iletişim
-              sayfamdan bana ulaşabilirsiniz.
-            </p>
-            <p className="text-sm text-ink-muted md:text-base">
-              Hemen başlayın! Bu fırsat için başvuru formunu doldurun, network marketing dünyasında
-              fark yaratan bir lider olun.
+              Size özel bir plan oluşturmak için iletişime geçebilir ya da hızlı başvuru formunu
+              doldurabilirsiniz.
             </p>
           </div>
         </div>
@@ -185,7 +174,7 @@ export default function ServicesPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {galleryImages.map((src, index) => (
               <div
-                key={src}
+                key={typeof src === "string" ? src : src.src}
                 className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-soft"
               >
                 <Image

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { createMetadata } from "@/lib/seo";
@@ -78,6 +79,15 @@ export default function RepresentativePage() {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="glass-card overflow-hidden">
+              <Image
+                src="/songul1.jpeg"
+                alt="Farmasi'ye takım arkadaşları aranıyor görseli"
+                width={720}
+                height={1080}
+                className="h-auto w-full object-contain"
+              />
             </div>
           </aside>
         </div>

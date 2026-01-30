@@ -417,7 +417,7 @@ export default function SongulAssistant() {
   };
 
   return (
-    <div className="fixed bottom-4 left-4 z-40 flex flex-col items-start gap-3 md:bottom-8 md:left-8">
+    <div className="fixed bottom-[6.5rem] left-4 z-40 flex flex-col items-start gap-4 md:bottom-28 md:left-8">
       <button
         type="button"
         className={cn(
@@ -428,8 +428,9 @@ export default function SongulAssistant() {
         aria-expanded={isOpen}
         aria-controls="songul-assistant-panel"
       >
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white shadow-glow">
-          <Sparkles className="h-4 w-4" />
+        <span className="relative flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white shadow-glow">
+          <span className="absolute inset-0 rounded-full bg-brand/50 animate-ping" />
+          <Sparkles className="relative h-4 w-4" />
         </span>
         {copy.assistantName}
       </button>
