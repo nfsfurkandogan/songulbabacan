@@ -1,7 +1,9 @@
+import Image from "next/image";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import FarmasiKayitFormuForm from "@/components/farmasi-kayit-formu-form";
+import uyelikImage from "@/assets/img/uyelik.jpeg";
 
 export const metadata = createMetadata({
   title: "Farmasi Üyelik Başvuru Formu",
@@ -65,6 +67,17 @@ export default function FarmasiKayitFormuPage() {
             <p className="mt-3 text-sm text-ink-muted">
               Süreç şeffaftır ve tamamen sizin onayınızla ilerler.
             </p>
+          </div>
+
+          <div className="glass-card overflow-hidden p-0">
+            <Image
+              src={uyelikImage}
+              alt="Farmasi üyelik danışmanlığı"
+              width={1200}
+              height={1200}
+              className="h-auto w-full object-cover"
+              sizes="(max-width: 768px) 100vw, 720px"
+            />
           </div>
         </div>
       </section>
