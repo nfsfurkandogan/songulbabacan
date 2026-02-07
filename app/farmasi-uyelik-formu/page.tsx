@@ -6,26 +6,34 @@ import FarmasiKayitFormuForm from "@/components/farmasi-kayit-formu-form";
 export const metadata = createMetadata({
   title: "Farmasi Üyelik Başvuru Formu",
   description:
-    "Farmasi üyelik başvuru formu. Kısa formu doldurun; üyelik süreci ve avantajlar hakkında hızlıca dönüş yapalım.",
+    "Farmasi üyelik başvuru formu. Kısa formu doldurun; üyelik süreci ve avantajlar hakkında sizi bilgilendirelim.",
   path: "/farmasi-uyelik-formu"
 });
 
 const highlights = [
   {
-    title: "1 Dakika",
-    description: "Formu hızlıca doldurun. Sadece gerekli bilgiler istenir."
+    title: "1 Dakikada Farmasi Üyelik Başvurusu",
+    description:
+      "Kısa formu doldurun, yalnızca gerekli bilgiler istenir. Farmasi üyelik süreci hakkında sizi bilgilendirelim."
   },
   {
-    title: "Ücretsiz",
-    description: "Kayıt ücretsizdir. Ek ücret veya taahhüt yok."
+    title: "Şeffaf Üyelik Süreci",
+    description:
+      "Başvuru sonrası üyelik detayları, başlangıç koşulları ve avantajlar net şekilde paylaşılır. Ek gizli ücret veya sürpriz yoktur."
   },
   {
-    title: "Hızlı Dönüş",
-    description: "Form ulaştığında kısa sürede iletişime geçiyoruz."
+    title: "Hızlı Geri Dönüş",
+    description:
+      "Form bize ulaştığında Farmasi danışmanlık süreci için en kısa sürede sizinle iletişime geçiyoruz."
   }
 ];
 
-const requirements = ["Adı - Soyadı", "Telefon No", "Şehir Adresi", "Mail Adresi (opsiyonel)"];
+const requirements = [
+  "Ad - Soyad",
+  "Telefon Numarası",
+  "Şehir",
+  "E-posta (isteğe bağlı)"
+];
 
 export default function FarmasiKayitFormuPage() {
   return (
@@ -51,7 +59,7 @@ export default function FarmasiKayitFormuPage() {
               ))}
             </div>
             <div className="glass-card space-y-3 p-4 text-sm text-ink-muted">
-              <p className="font-semibold text-ink">Formda istenen bilgiler</p>
+              <p className="font-semibold text-ink">Başvuru İçin Gerekli Bilgiler</p>
               <div className="flex flex-wrap gap-2">
                 {requirements.map((item) => (
                   <span key={item} className="chip">

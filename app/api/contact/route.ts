@@ -9,7 +9,7 @@ const escapeHtml = (value: string) =>
     .replace(/'/g, "&#39;");
 
 export async function POST(request: Request) {
-  const { name, email, phone, message, address } = await request.json();
+  const { name, email, phone, message, address, city } = await request.json();
 
   if (!name || !message) {
     return NextResponse.json({ error: "Eksik alan" }, { status: 400 });
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   const safeNamePlain = String(name).trim();
   const safeName = escapeHtml(safeNamePlain);
   const safePhone = escapeHtml(String(phone ?? "-").trim() || "-");
-  const safeAddress = escapeHtml(String(address ?? "-").trim() || "-");
+  const safeCity = escapeHtml(String(city ?? address ?? "-").trim() || "-");
   const safeMessageRaw = escapeHtml(String(message ?? "").trim());
   const safeMessage = safeMessageRaw ? safeMessageRaw.replace(/\n/g, "<br />") : "";
   const to = process.env.CONTACT_TO_EMAIL ?? "officialsongulbabacan@gmail.com";
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
           <div style="max-width:640px;margin:0 auto;background:#ffffff;border-radius:16px;border:1px solid #e5e7eb;padding:24px;">
             <h2 style="margin:0 0 6px;color:#111827;">Yeni Form Başvurusu</h2>
             <p style="margin:0 0 20px;color:#6b7280;font-size:14px;">
-              Farmasi ücretsiz kayıt formundan yeni bir başvuru geldi.
+              Farmasi üyelik başvuru formundan yeni bir başvuru geldi.
             </p>
             <table style="width:100%;border-collapse:separate;border-spacing:0 8px;font-size:14px;">
               <tr>
@@ -54,8 +54,8 @@ export async function POST(request: Request) {
                 <td style="font-weight:600;color:#111827;">${safePhone}</td>
               </tr>
               <tr>
-                <td style="color:#6b7280;">Şehir Adresi</td>
-                <td style="font-weight:600;color:#111827;">${safeAddress}</td>
+                <td style="color:#6b7280;">Şehir</td>
+                <td style="font-weight:600;color:#111827;">${safeCity}</td>
               </tr>
               <tr>
                 <td style="color:#6b7280;">E-posta</td>

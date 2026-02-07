@@ -4,7 +4,6 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { siteConfig } from "@/lib/siteConfig";
 
 export default function FarmasiKayitFormuForm() {
@@ -22,15 +21,15 @@ export default function FarmasiKayitFormuForm() {
     const formData = new FormData(form);
     const name = String(formData.get("name") ?? "").trim();
     const phone = String(formData.get("phone") ?? "").trim();
-    const address = String(formData.get("address") ?? "").trim();
+    const city = String(formData.get("city") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
 
-    const message = "Farmasi Ücretsiz Kayıt Başvurusu";
+    const message = "Farmasi Üyelik Başvurusu";
     const fallbackMessage = [
-      "Farmasi Ücretsiz Kayıt",
+      "Farmasi Üyelik Başvurusu",
       `Ad Soyad: ${name}`,
       `Telefon: ${phone}`,
-      `Şehir Adresi: ${address}`,
+      `Şehir: ${city}`,
       `E-posta: ${email || "-"}`
     ].join("\n");
 
@@ -42,7 +41,7 @@ export default function FarmasiKayitFormuForm() {
           name,
           email,
           phone,
-          address,
+          city,
           message
         })
       });
@@ -52,7 +51,7 @@ export default function FarmasiKayitFormuForm() {
       form.reset();
     } catch (error) {
       setStatus("error");
-      const subject = encodeURIComponent("Farmasi Ücretsiz Kayıt");
+      const subject = encodeURIComponent("Farmasi Üyelik Başvurusu");
       const body = encodeURIComponent(fallbackMessage);
       setFallbackMailto(`mailto:${siteConfig.contact.email}?subject=${subject}&body=${body}`);
     }
@@ -61,19 +60,19 @@ export default function FarmasiKayitFormuForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-1">
-        <p className="section-kicker">Farmasi Ücretsiz Kayıt</p>
-        <h2 className="text-xl font-semibold">Hızlı Form</h2>
+        <p className="section-kicker">Farmasi Üyelik</p>
+        <h2 className="text-xl font-semibold">Hızlı Başvuru Formu</h2>
         <p className="text-sm text-ink-muted">
-          1 dakika içinde tamamlayın. Bilgileriniz sadece kayıt süreci için kullanılır.
+          1 dakika içinde tamamlayın. Bilgileriniz sadece başvuru süreci için kullanılır.
         </p>
       </div>
       <div className="grid gap-4">
         <label className="space-y-2 text-sm font-semibold text-ink">
-          <span>Adı - Soyadı</span>
+          <span>Ad - Soyad</span>
           <Input name="name" placeholder="Ad Soyad" autoComplete="name" required />
         </label>
         <label className="space-y-2 text-sm font-semibold text-ink">
-          <span>Telefon No</span>
+          <span>Telefon Numarası</span>
           <Input
             name="phone"
             type="tel"
@@ -84,12 +83,11 @@ export default function FarmasiKayitFormuForm() {
           />
         </label>
         <label className="space-y-2 text-sm font-semibold text-ink">
-          <span>Şehir Adresi</span>
-          <Textarea
-            name="address"
-            autoComplete="street-address"
-            rows={3}
-            placeholder="İl / İlçe ve açık adres"
+          <span>Şehir</span>
+          <Input
+            name="city"
+            autoComplete="address-level2"
+            placeholder="İl / İlçe"
             required
           />
         </label>
