@@ -12,7 +12,12 @@ const nextConfig = {
       { source: "/iletisim/index.html", destination: "/iletisim", permanent: true },
       {
         source: "/farmasi-google-ads",
-        destination: "/farmasi-kayit-formu",
+        destination: "/farmasi-uyelik-formu",
+        permanent: true
+      },
+      {
+        source: "/farmasi-kayit-formu",
+        destination: "/farmasi-uyelik-formu",
         permanent: true
       }
     ];

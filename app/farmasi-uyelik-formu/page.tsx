@@ -7,7 +7,7 @@ export const metadata = createMetadata({
   title: "Farmasi Üyelik Başvuru Formu",
   description:
     "Farmasi üyelik başvuru formu. Kısa formu doldurun; üyelik süreci ve avantajlar hakkında hızlıca dönüş yapalım.",
-  path: "/farmasi-kayit-formu"
+  path: "/farmasi-uyelik-formu"
 });
 
 const highlights = [
@@ -76,7 +76,7 @@ export default function FarmasiKayitFormuPage() {
           name: "Farmasi Üyelik Başvuru Formu",
           description:
             "Farmasi üyelik başvuru formu. Kısa formu doldurun; üyelik süreci ve avantajlar hakkında hızlıca dönüş yapalım.",
-          url: `${siteConfig.url}/farmasi-kayit-formu`,
+          url: `${siteConfig.url}/farmasi-uyelik-formu`,
           inLanguage: "tr-TR"
         }}
       />
