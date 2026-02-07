@@ -25,7 +25,8 @@ export default function FarmasiKayitFormuForm() {
     const address = String(formData.get("address") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
 
-    const message = [
+    const message = "Farmasi Ücretsiz Kayıt Başvurusu";
+    const fallbackMessage = [
       "Farmasi Ücretsiz Kayıt",
       `Ad Soyad: ${name}`,
       `Telefon: ${phone}`,
@@ -41,6 +42,7 @@ export default function FarmasiKayitFormuForm() {
           name,
           email,
           phone,
+          address,
           message
         })
       });
@@ -51,7 +53,7 @@ export default function FarmasiKayitFormuForm() {
     } catch (error) {
       setStatus("error");
       const subject = encodeURIComponent("Farmasi Ücretsiz Kayıt");
-      const body = encodeURIComponent(message);
+      const body = encodeURIComponent(fallbackMessage);
       setFallbackMailto(`mailto:${siteConfig.contact.email}?subject=${subject}&body=${body}`);
     }
   }
