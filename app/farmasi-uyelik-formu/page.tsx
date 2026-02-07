@@ -40,7 +40,12 @@ export default function FarmasiKayitFormuPage() {
     <>
       <section className="section bg-hero-sheen hero-compact">
         <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="space-y-6">
+          <div className="gradient-border order-1 rounded-3xl p-[1px] lg:order-2">
+            <div className="glass-card p-6">
+              <FarmasiKayitFormuForm />
+            </div>
+          </div>
+          <div className="order-2 space-y-6 lg:order-1">
             <p className="section-kicker">Farmasi</p>
             <h1 className="text-4xl font-semibold md:text-5xl">Farmasi Üyelik Başvuru Formu</h1>
             <p className="max-w-2xl text-ink-muted md:text-lg">
@@ -67,11 +72,6 @@ export default function FarmasiKayitFormuPage() {
                   </span>
                 ))}
               </div>
-            </div>
-          </div>
-          <div className="gradient-border rounded-3xl p-[1px]">
-            <div className="glass-card p-6">
-              <FarmasiKayitFormuForm />
             </div>
           </div>
         </div>
