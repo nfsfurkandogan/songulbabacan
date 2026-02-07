@@ -18,11 +18,17 @@ export default function FarmasiKayitFormuPage() {
       <section className="section bg-hero-sheen hero-compact">
         <div className="container max-w-3xl space-y-6">
           <div className="space-y-4 text-left">
-            <p className="section-kicker">Farmasi Üyelik</p>
-            <h1 className="text-4xl font-semibold md:text-5xl">Ücretsiz Üyelik Başvuru Formu</h1>
+            <p className="section-kicker">FARMASİ RESMİ ÜYELİK</p>
+            <h1 className="text-4xl font-semibold md:text-6xl">FARMASİ ÜYELİK</h1>
+            <h2 className="text-2xl font-semibold text-ink md:text-3xl">
+              Ücretsiz Üyelik Başvuru Formu
+            </h2>
             <p className="text-ink-muted md:text-lg">
               Üyelik sürecini başlatmak için kısa formu doldurun. Şartlar ve avantajlar hakkında
               sizinle en kısa sürede iletişime geçelim.
+            </p>
+            <p className="text-sm font-semibold text-ink">
+              Bu sayfa Farmasi üyelik başvurusu içindir.
             </p>
             <p className="text-sm text-ink-muted">
               Bilgileriniz gizli tutulur ve yalnızca başvuru süreci kapsamında kullanılır.
