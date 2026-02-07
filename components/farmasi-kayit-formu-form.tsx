@@ -63,7 +63,7 @@ export default function FarmasiKayitFormuForm() {
         <p className="section-kicker">Farmasi Üyelik</p>
         <h2 className="text-xl font-semibold">Hızlı Başvuru Formu</h2>
         <p className="text-sm text-ink-muted">
-          1 dakika içinde tamamlayın. Bilgileriniz sadece başvuru süreci için kullanılır.
+          Ücretsiz danışmanlık ve indirim şifreniz için formu doldurabilirsiniz.
         </p>
       </div>
       <div className="grid gap-4">
