@@ -10,31 +10,6 @@ export const metadata = createMetadata({
   path: "/farmasi-uyelik-formu"
 });
 
-const highlights = [
-  {
-    title: "1 Dakikada Farmasi Üyelik Başvurusu",
-    description:
-      "Kısa formu doldurun, yalnızca gerekli bilgiler istenir. Farmasi üyelik süreci hakkında sizi bilgilendirelim."
-  },
-  {
-    title: "Şeffaf Üyelik Süreci",
-    description:
-      "Başvuru sonrası üyelik detayları, başlangıç koşulları ve avantajlar net şekilde paylaşılır. Ek gizli ücret veya sürpriz yoktur."
-  },
-  {
-    title: "Hızlı Geri Dönüş",
-    description:
-      "Form bize ulaştığında Farmasi danışmanlık süreci için en kısa sürede sizinle iletişime geçiyoruz."
-  }
-];
-
-const requirements = [
-  "Ad - Soyad",
-  "Telefon Numarası",
-  "Şehir",
-  "E-posta (isteğe bağlı)"
-];
-
 export default function FarmasiKayitFormuPage() {
   return (
     <>
@@ -61,24 +36,36 @@ export default function FarmasiKayitFormuPage() {
       </section>
 
       <section className="section pt-6">
-        <div className="container grid gap-3 sm:grid-cols-3">
-          {highlights.map((item) => (
-            <div key={item.title} className="glass-card p-4 text-sm">
-              <p className="font-semibold text-ink">{item.title}</p>
-              <p className="mt-1 text-ink-muted">{item.description}</p>
-            </div>
-          ))}
-        </div>
-        <div className="container mt-6">
-          <div className="glass-card space-y-3 p-4 text-sm text-ink-muted">
-            <p className="font-semibold text-ink">Başvuru İçin Gerekli Bilgiler</p>
-            <div className="flex flex-wrap gap-2">
-              {requirements.map((item) => (
-                <span key={item} className="chip">
-                  {item}
-                </span>
-              ))}
-            </div>
+        <div className="container max-w-3xl space-y-6">
+          <div className="glass-card p-6">
+            <p className="text-base font-semibold text-ink">Başvuru Süreci</p>
+            <ol className="mt-3 space-y-2 text-sm text-ink-muted">
+              <li>1. Başvurunuz alınır.</li>
+              <li>2. En kısa sürede sizinle iletişime geçilir.</li>
+              <li>3. Detaylar net şekilde paylaşılır.</li>
+              <li>4. Onayınızla üyelik aktif edilir.</li>
+            </ol>
+            <p className="mt-3 text-sm text-ink-muted">Süreç planlı ve destekli ilerler.</p>
+          </div>
+
+          <div className="glass-card p-6">
+            <p className="text-base font-semibold text-ink">Neden Farmasi?</p>
+            <ul className="mt-3 space-y-2 text-sm text-ink-muted">
+              <li>Özel indirim avantajı</li>
+              <li>Kazanç fırsatı</li>
+              <li>Eğitim ve ekip desteği</li>
+              <li>Esnek çalışma imkanı</li>
+            </ul>
+            <p className="mt-3 text-sm text-ink-muted">
+              Farmasi üyeliği, doğru sistemle büyüme fırsatı sunar.
+            </p>
+          </div>
+
+          <div className="glass-card p-6">
+            <p className="text-base font-semibold text-ink">Güven</p>
+            <p className="mt-3 text-sm text-ink-muted">
+              Süreç şeffaftır ve tamamen sizin onayınızla ilerler.
+            </p>
           </div>
         </div>
       </section>
