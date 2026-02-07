@@ -9,7 +9,12 @@ const nextConfig = {
       { source: "/farmasi/index.html", destination: "/farmasi", permanent: true },
       { source: "/basari-hikayem/index.html", destination: "/basari-hikayem", permanent: true },
       { source: "/kayit-ol/index.html", destination: "/kayit-ol", permanent: true },
-      { source: "/iletisim/index.html", destination: "/iletisim", permanent: true }
+      { source: "/iletisim/index.html", destination: "/iletisim", permanent: true },
+      {
+        source: "/farmasi-google-ads",
+        destination: "/farmasi-kayit-formu",
+        permanent: true
+      }
     ];
   }
 };

@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/farmasi-askidan-alma",
     "/farmasi-sponsor",
     "/farmasi-influencer",
-    "/farmasi-google-ads",
+    "/farmasi-kayit-formu",
     "/network-marketingde-basariya-giden-yol-e-kitap-ile-guclenin",
     "/kayit-ol",
     "/katalog",
