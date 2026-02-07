@@ -25,7 +25,6 @@ export default function FarmasiKayitFormuPage() {
             <p className="text-sm text-ink-muted">
               Bilgileriniz gizli tutulur ve yalnızca başvuru süreci kapsamında kullanılır.
             </p>
-            <p className="text-lg">👇</p>
           </div>
           <div className="gradient-border rounded-3xl p-[1px]">
             <div className="glass-card p-6">
