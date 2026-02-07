@@ -4,9 +4,9 @@ import JsonLd from "@/components/json-ld";
 import FarmasiKayitFormuForm from "@/components/farmasi-kayit-formu-form";
 
 export const metadata = createMetadata({
-  title: "Farmasi Ücretsiz Kayıt",
+  title: "Farmasi Üyelik Başvuru Formu",
   description:
-    "Farmasi ücretsiz kayıt formu. Ad Soyad, Telefon ve Şehir bilgilerinizi bırakın, hızlıca dönüş yapalım.",
+    "Farmasi üyelik başvuru formu. Kısa formu doldurun; üyelik süreci ve avantajlar hakkında hızlıca dönüş yapalım.",
   path: "/farmasi-kayit-formu"
 });
 
@@ -34,10 +34,13 @@ export default function FarmasiKayitFormuPage() {
         <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-6">
             <p className="section-kicker">Farmasi</p>
-            <h1 className="text-4xl font-semibold md:text-5xl">Farmasi Ücretsiz Kayıt</h1>
+            <h1 className="text-4xl font-semibold md:text-5xl">Farmasi Üyelik Başvuru Formu</h1>
             <p className="max-w-2xl text-ink-muted md:text-lg">
-              Google reklamından geldiniz. Kısa formu doldurun, ücretsiz üyelik için hızlıca
-              sizinle iletişime geçelim.
+              Kısa formu doldurun, üyelik süreci, avantajlar ve başlangıç adımları hakkında sizinle
+              en kısa sürede iletişime geçelim.
+            </p>
+            <p className="text-sm text-ink-muted">
+              Bilgileriniz gizli tutulur ve yalnızca başvuru süreci için kullanılır.
             </p>
             <div className="grid gap-3 sm:grid-cols-3">
               {highlights.map((item) => (
@@ -70,9 +73,9 @@ export default function FarmasiKayitFormuPage() {
         data={{
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: "Farmasi Ücretsiz Kayıt",
+          name: "Farmasi Üyelik Başvuru Formu",
           description:
-            "Farmasi ücretsiz kayıt formu. Ad Soyad, Telefon ve Şehir bilgilerinizi bırakın, hızlıca dönüş yapalım.",
+            "Farmasi üyelik başvuru formu. Kısa formu doldurun; üyelik süreci ve avantajlar hakkında hızlıca dönüş yapalım.",
           url: `${siteConfig.url}/farmasi-kayit-formu`,
           inLanguage: "tr-TR"
         }}
