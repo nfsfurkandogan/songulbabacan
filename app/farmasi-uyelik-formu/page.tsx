@@ -45,33 +45,37 @@ export default function FarmasiKayitFormuPage() {
       <section className="section pt-6">
         <div className="container max-w-3xl space-y-6">
           <div className="glass-card p-6">
-            <p className="text-base font-semibold text-ink">Başvuru Süreci</p>
-            <ol className="mt-3 space-y-2 text-sm text-ink-muted">
-              <li>1. Başvurunuz alınır.</li>
-              <li>2. En kısa sürede sizinle iletişime geçilir.</li>
-              <li>3. Detaylar net şekilde paylaşılır.</li>
-              <li>4. Onayınızla üyelik aktif edilir.</li>
-            </ol>
-            <p className="mt-3 text-sm text-ink-muted">Süreç planlı ve destekli ilerler.</p>
+            <p className="text-base font-semibold text-ink">Farmasi’de Yeni Bir Adım</p>
+            <div className="mt-3 space-y-4 text-sm text-ink-muted">
+              <div>
+                <p className="font-semibold text-ink">🌿 Kişisel Destek</p>
+                <p>
+                  Başvuru sonrası size özel danışmanınız süreci birlikte planlar. İlk adımlarınızda
+                  ve sonrasında yanınızda olur.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-ink">🌿 Ücretsiz ve Şeffaf Başlangıç</p>
+                <p>
+                  Üyelik ücretsizdir. Zorunlu ücret veya taahhüt yoktur. 18 yaşını doldurmanız
+                  yeterlidir.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-ink">🌿 Avantaj ve Kazanç İmkanı</p>
+                <p>
+                  Ürünleri indirimli kullanabilir, satış yaparak ek gelir elde edebilir ve
+                  dilerseniz ekibinizi kurarak büyüyebilirsiniz.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="glass-card p-6">
-            <p className="text-base font-semibold text-ink">Neden Farmasi?</p>
-            <ul className="mt-3 space-y-2 text-sm text-ink-muted">
-              <li>Özel indirim avantajı</li>
-              <li>Kazanç fırsatı</li>
-              <li>Eğitim ve ekip desteği</li>
-              <li>Esnek çalışma imkanı</li>
-            </ul>
+            <p className="text-base font-semibold text-ink">Güvenle İlerleyin</p>
             <p className="mt-3 text-sm text-ink-muted">
-              Farmasi üyeliği, doğru sistemle büyüme fırsatı sunar.
-            </p>
-          </div>
-
-          <div className="glass-card p-6">
-            <p className="text-base font-semibold text-ink">Güven</p>
-            <p className="mt-3 text-sm text-ink-muted">
-              Süreç şeffaftır ve tamamen sizin onayınızla ilerler.
+              Babacanlar Grup Kurucu Lideri, Asbaşkan Direktör Songül Babacan ekibine hoş geldiniz.
+              Bu yolculukta birlikteyiz.
             </p>
           </div>
 
