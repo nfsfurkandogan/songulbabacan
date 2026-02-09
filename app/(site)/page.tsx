@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import JoinTrigger from "@/components/join-trigger";
-import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import CtaStrip from "@/components/cta-strip";
 import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import { prImages } from "@/lib/pr-images";
+import heroImage from "@/assets/img/portrait.jpg";
 
 const faqItems = [
   {
@@ -27,8 +26,27 @@ const faqItems = [
   }
 ];
 
-const heroImage = prImages[0];
 const galleryImages = [prImages[1], prImages[2], prImages[4], prImages[5], prImages[8], prImages[10]];
+
+const experienceItems = [
+  {
+    icon: "🗓️",
+    title: "20+ Yıl Deneyim",
+    description:
+      "Yirmi yılı aşkın saha tecrübesiyle girişimcilik ve network marketing alanında güçlü bir birikim."
+  },
+  {
+    icon: "📈",
+    title: "Sistemli Büyüme Modeli",
+    description: "Disiplinli, ölçülebilir ve sürdürülebilir gelir sistemleri kurma yaklaşımı."
+  },
+  {
+    icon: "👥",
+    title: "Ekip ve Liderlik Uzmanlığı",
+    description:
+      "Ekip kurma, lider yetiştirme ve kalıcı organizasyon yapıları oluşturma uzmanlığı."
+  }
+];
 
 export default function HomePage() {
   return (
@@ -36,38 +54,26 @@ export default function HomePage() {
       <section className="section bg-hero-sheen hero-compact">
         <div className="container grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.05s" }}>
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="soft">PR • Farmasi • Mentorluk</Badge>
-              <Badge variant="muted">Premium Mentorluk</Badge>
-            </div>
             <h1 className="text-balance text-4xl font-semibold md:text-5xl lg:text-6xl">
-              Kazanmak için başla.
+              Evden Para Kazanma ve Sürdürülebilir Gelir Sistemleri | Dijital Girişimcilik
             </h1>
+            <p className="text-sm font-semibold text-ink">Songül Babacan</p>
             <p className="text-lg text-ink-muted md:text-xl">
-              Farmasi ile kendi gelirini kur. Kadın girişimci topluluğumuzda mentorlukla büyü.
+              20 yıllık girişimcilik deneyimimle, evden sistemli gelir kurmak ve network marketing
+              alanında güçlü bir yapı oluşturmak isteyenlere yol gösteriyorum.
+            </p>
+            <p className="text-sm text-ink-muted">
+              Başarı şansa değil, doğru sisteme dayanır. Disiplinli çalışma, güçlü liderlik ve
+              sürdürülebilir stratejilerle evden gelir kurmak mümkündür. Bu süreci size adım adım
+              öğretiyorum.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild>
-                <Link href={siteConfig.contact.whatsapp} target="_blank" rel="noopener noreferrer">
-                  WhatsApp ile İletişim
-                </Link>
+                <Link href="/egitimler">Ücretsiz Eğitime Başla</Link>
               </Button>
-              <JoinTrigger variant="outline">Üye Ol</JoinTrigger>
               <Button asChild variant="outline">
-                <Link href="/kazanc-plani">Kazanç Planı</Link>
+                <Link href="/farmasi-uyelik-formu">Ekibime Katıl</Link>
               </Button>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {[
-                { title: "Mentorluk", desc: "Kişisel yol haritası" },
-                { title: "Ekip", desc: "Topluluk ve eğitim" },
-                { title: "Altyapı", desc: "Farmasi gücü" }
-              ].map((item) => (
-                <div key={item.title} className="glass-card p-4">
-                  <p className="text-sm font-semibold">{item.title}</p>
-                  <p className="text-xs text-ink-muted">{item.desc}</p>
-                </div>
-              ))}
             </div>
           </div>
           <div className="relative animate-fade-up" style={{ animationDelay: "0.15s" }}>
@@ -84,6 +90,28 @@ export default function HomePage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container space-y-6">
+          <div className="max-w-2xl space-y-3">
+            <p className="section-kicker">Deneyim</p>
+            <h2 className="section-title">Sistemli büyüme için güvenilir rehberlik</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {experienceItems.map((item) => (
+              <div key={item.title} className="glass-card p-6 text-center">
+                <div className="text-3xl">{item.icon}</div>
+                <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-sm text-ink-muted">{item.description}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-ink-muted">
+            20 yıllık deneyimimle, girişimcilerin sistemli ve sürdürülebilir gelir yapıları kurmasına
+            öncülük ediyorum.
+          </p>
         </div>
       </section>
 
