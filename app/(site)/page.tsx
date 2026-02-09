@@ -49,6 +49,63 @@ const experienceItems = [
   }
 ];
 
+const successStories = [
+  {
+    name: "Ayşe K.",
+    city: "Ankara",
+    quote:
+      "Evden çalışarak düzenli gelir elde edebileceğimi düşünmezdim. Planlı ilerlemeyi öğrenince süreç netleşti ve güvenim arttı."
+  },
+  {
+    name: "Zeynep T.",
+    city: "İzmir",
+    quote:
+      "En büyük değişim rastgele çalışmayı bırakmam oldu. Sistemli ilerleyince gelirim daha istikrarlı hale geldi."
+  },
+  {
+    name: "Fatma Y.",
+    city: "Bursa",
+    quote:
+      "Burada sadece ürün anlatılmıyor, gerçek bir iş modeli öğretiliyor. Bakış açım tamamen değişti."
+  },
+  {
+    name: "Elif A.",
+    city: "İstanbul",
+    quote:
+      "Ekip kurma süreci gözümü korkutuyordu. Adım adım ilerleyince aslında zor olmadığını gördüm."
+  },
+  {
+    name: "Merve D.",
+    city: "Antalya",
+    quote:
+      "Sosyal medyayı bilinçli kullanmayı öğrendim. Artık paylaşım değil, strateji yapıyorum."
+  },
+  {
+    name: "Hatice G.",
+    city: "Konya",
+    quote:
+      "Daha önce denemiştim ama sürdürememiştim. Bu kez sistemli çalıştığım için istikrarlı devam ediyorum."
+  },
+  {
+    name: "Seda B.",
+    city: "Kayseri",
+    quote:
+      "Evden gelir modeli sayesinde hem aileme hem işime zaman ayırabiliyorum. Bu denge benim için çok kıymetli."
+  },
+  {
+    name: "Gülcan E.",
+    city: "Gaziantep",
+    quote:
+      "Mentorluk desteği en büyük fark oldu. Süreci yalnız yürümek zorunda olmadığımı hissettim."
+  },
+  {
+    name: "Neslihan Ö.",
+    city: "Samsun",
+    quote:
+      "İlk ay büyük kazanç hedeflemedik; sağlam temel kurduk. Bu yaklaşım bana güven verdi."
+  }
+];
+
 export default function HomePage() {
   return (
     <>
@@ -250,40 +307,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bg-[#f7f2ea]">
         <div className="container space-y-8">
           <div className="max-w-2xl space-y-3">
-            <p className="section-kicker">Başarı Hikayeleri</p>
-            <h2 className="section-title">Gerçek deneyimler, gerçek dönüşüm</h2>
+            <p className="section-kicker">Başarı Hikâyeleri</p>
+            <h2 className="section-title">Girişimcilik yolculuğunda gerçek deneyimler</h2>
             <p className="text-ink-muted">
-              Mentorluk programı ile yol alan kadın girişimcilerden ilham alın.
+              Sistemli çalışma, doğru mentorluk ve planlı ilerlemenin sonuçları.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                name: "Elif C.",
-                result: "İlk 2 ayda düzenli gelir",
-                quote:
-                  "Ekip kurma stratejileri sayesinde hem gelir hem de özgüven kazandım."
-              },
-              {
-                name: "Zeynep A.",
-                result: "Dijital satışta %35 artış",
-                quote: "Planlı içerik takvimi ile satışım istikrarlı hale geldi."
-              },
-              {
-                name: "Merve T.",
-                result: "Liderlik rolüne yükseldi",
-                quote: "Mentorluk desteği, cesur kararlar almamı sağladı."
-              }
-            ].map((item) => (
-              <div key={item.name} className="glass-card p-6">
-                <p className="text-sm font-semibold">{item.name}</p>
-                <p className="text-xs text-brand">{item.result}</p>
-                <p className="mt-3 text-sm text-ink-muted">“{item.quote}”</p>
-              </div>
-            ))}
+          <div className="marquee">
+            <div className="marquee-track gap-6">
+              {[...successStories, ...successStories].map((item, index) => {
+                const initials = item.name
+                  .split(" ")
+                  .map((part) => part[0])
+                  .join("")
+                  .slice(0, 2);
+
+                return (
+                  <article
+                    key={`${item.name}-${index}`}
+                    className="w-[260px] flex-shrink-0 rounded-2xl border border-white/60 bg-white p-5 shadow-soft"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand/10 text-sm font-semibold text-ink">
+                        {initials}
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-ink">{item.name}</p>
+                        <p className="text-xs text-ink-muted">{item.city}</p>
+                      </div>
+                    </div>
+                    <p className="mt-3 text-sm text-ink-muted line-clamp-4">
+                      “{item.quote}”
+                    </p>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
