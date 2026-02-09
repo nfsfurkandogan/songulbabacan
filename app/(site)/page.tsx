@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import { prImages } from "@/lib/pr-images";
 import heroImage from "@/assets/img/portrait.jpg";
+import valueImage from "@/assets/img/portrait.jpg";
 
 const faqItems = [
   {
@@ -112,6 +113,41 @@ export default function HomePage() {
             20 yıllık deneyimimle, girişimcilerin sistemli ve sürdürülebilir gelir yapıları kurmasına
             öncülük ediyorum.
           </p>
+        </div>
+      </section>
+
+      <section className="section bg-section-glow">
+        <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="space-y-5">
+            <p className="section-kicker">Değer Önerisi</p>
+            <h2 className="section-title">
+              Evden Para Kazanmak ve Kendi Dijital Gelir Sistemini Kurmak Mümkün
+            </h2>
+            <p className="text-ink-muted">
+              Düşük maliyetle dijital iş kurabilir, sosyal medya üzerinden güçlü bir müşteri ağı
+              oluşturabilir ve ekip sistemiyle gelirinizi sürdürülebilir şekilde büyütebilirsiniz.
+            </p>
+            <p className="text-ink-muted">
+              Başarı tesadüf değildir. Doğru strateji, sistemli çalışma ve istikrarlı liderlik ile
+              evden gelir modeli kurmak mümkündür.
+            </p>
+            <p className="text-ink-muted">
+              Bu süreci size adım adım, uygulanabilir ve ölçülebilir bir sistemle öğretiyorum.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="absolute -left-10 -top-8 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
+            <div className="absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-lilac/20 blur-2xl" />
+            <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift lg:mx-0">
+              <Image
+                src={valueImage}
+                alt="Dijital girişimcilik danışmanlığı"
+                width={520}
+                height={640}
+                className="h-[420px] w-full object-cover md:h-[480px]"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
