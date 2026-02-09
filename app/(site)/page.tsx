@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import CtaStrip from "@/components/cta-strip";
+import FarmasiKayitFormuForm from "@/components/farmasi-kayit-formu-form";
 import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import { prImages } from "@/lib/pr-images";
@@ -406,6 +407,31 @@ export default function HomePage() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="space-y-5">
+            <p className="section-kicker">Dönüşüm Alanı</p>
+            <h2 className="section-title">Gelir Sistemini Kurmaya Hazır mısınız?</h2>
+            <p className="text-ink-muted">
+              Evden para kazanmak, dijital girişimcilik yolunda ilerlemek ve sürdürülebilir bir
+              gelir modeli oluşturmak için ilk adımı bugün atabilirsiniz.
+            </p>
+            <p className="text-ink-muted">
+              Doğru sistem, planlı ilerleme ve mentorluk desteği ile bu süreci birlikte
+              yapılandıralım.
+            </p>
+          </div>
+          <div className="gradient-border rounded-3xl p-[1px]">
+            <div className="glass-card p-6">
+              <p className="mb-3 text-xs text-ink-muted">
+                Bilgileriniz gizli tutulur. Süreç tamamen bilgilendirme amaçlıdır.
+              </p>
+              <FarmasiKayitFormuForm />
+            </div>
+          </div>
         </div>
       </section>
 
