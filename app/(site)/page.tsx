@@ -9,6 +9,11 @@ import JsonLd from "@/components/json-ld";
 import { prImages } from "@/lib/pr-images";
 import heroImage from "@/assets/img/portrait.jpg";
 import valueImage from "@/assets/img/portrait.jpg";
+import trafikImage from "@/assets/img/trafik.jpeg";
+import uzmanlikImage from "@/assets/img/uzmanlik.jpeg";
+import farmasiAracImage from "@/assets/img/farmasi-arac.jpeg";
+import kisiselHikayeImage from "@/assets/img/kisisel-hikaye.jpeg";
+import nedenBenImage from "@/assets/img/neden-ben.jpeg";
 
 const faqItems = [
   {
@@ -200,6 +205,180 @@ export default function HomePage() {
               <Image
                 src={valueImage}
                 alt="Dijital girişimcilik danışmanlığı"
+                width={520}
+                height={640}
+                className="h-[420px] w-full object-cover md:h-[480px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="space-y-5">
+            <p className="section-kicker">Trafik Çeken Bölüm</p>
+            <h2 className="section-title">Evden Para Kazanmak Gerçekten Mümkün mü?</h2>
+            <p className="text-ink font-semibold">Evet, mümkündür.</p>
+            <p className="text-ink-muted">
+              Network marketing ve doğrudan satış modeli; evden gelir elde etmek, kendi işini kurmak
+              ve dijital dünyada sürdürülebilir kazanç oluşturmak isteyenler için güçlü bir iş
+              modelidir.
+            </p>
+            <p className="text-ink-muted">
+              Doğru strateji, sistemli bir büyüme planı ve güçlü mentorluk desteği ile bu model;
+              geçici kazançtan kalıcı gelir sistemine dönüşebilir.
+            </p>
+            <p className="text-ink-muted">
+              Önemli olan rastgele ilerlemek değil, ölçülebilir ve uygulanabilir bir yapı ile
+              hareket etmektir. Başarı; planlama, disiplin ve doğru liderlikle inşa edilir.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="absolute -left-10 -top-8 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
+            <div className="absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-lilac/20 blur-2xl" />
+            <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift lg:mx-0">
+              <Image
+                src={trafikImage}
+                alt="Evden para kazanma modeli"
+                width={520}
+                height={640}
+                className="h-[420px] w-full object-cover md:h-[480px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-section-glow">
+        <div className="container grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="relative lg:order-1">
+            <div className="absolute -left-10 -top-8 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
+            <div className="absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-lilac/20 blur-2xl" />
+            <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift lg:mx-0">
+              <Image
+                src={uzmanlikImage}
+                alt="Network marketing uzmanlık alanı"
+                width={520}
+                height={640}
+                className="h-[420px] w-full object-cover md:h-[480px]"
+              />
+            </div>
+          </div>
+          <div className="space-y-5 lg:order-2">
+            <p className="section-kicker">Uzmanlık Alanı</p>
+            <h2 className="section-title">Network Marketing ile Sürdürülebilir Gelir Modeli</h2>
+            <p className="text-ink-muted">
+              Network marketing; ürün satışı, ekip kurma ve performans temelli kazanç sistemi üzerine
+              kurulu güçlü bir iş modelidir.
+            </p>
+            <p className="text-ink-muted">
+              Doğru ürün konumlandırması, etkili sosyal medya satış stratejileri ve sistemli ekip
+              yapılanması ile gelir istikrarlı ve sürdürülebilir şekilde büyütülebilir.
+            </p>
+            <p className="text-ink-muted">
+              Bu model; düşük maliyetle dijital girişimcilik yapmak, evden para kazanmak ve uzun
+              vadeli gelir sistemi oluşturmak isteyenler için profesyonel bir fırsat sunar.
+            </p>
+            <p className="text-ink-muted">
+              Başarı; planlı ilerleme, liderlik gelişimi ve disiplinli sistem yönetimi ile mümkündür.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="space-y-5">
+            <p className="section-kicker">Farmasi (Araç Olarak)</p>
+            <h2 className="section-title">Farmasi İş Modeli ile Stratejik ve Sürdürülebilir Büyüme</h2>
+            <p className="text-ink-muted">
+              Farmasi iş modeli; satış kârı ve ekip prim sistemi üzerine kurulu performans temelli
+              bir gelir yapısı sunar.
+            </p>
+            <p className="text-ink-muted">
+              Doğru ürün konumlandırması, sistemli ekip yapılanması ve etkili sosyal medya satış
+              stratejileri ile bu model istikrarlı bir büyüme fırsatına dönüşebilir.
+            </p>
+            <p className="text-ink-muted">
+              20 yıllık saha deneyimimle, Farmasi iş modelini plansız bir deneme süreci olmaktan
+              çıkarıp, stratejik ve sürdürülebilir bir gelir sistemine dönüştürmenize rehberlik
+              ediyorum.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="absolute -left-10 -top-8 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
+            <div className="absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-lilac/20 blur-2xl" />
+            <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift lg:mx-0">
+              <Image
+                src={farmasiAracImage}
+                alt="Farmasi iş modeli"
+                width={520}
+                height={640}
+                className="h-[420px] w-full object-cover md:h-[480px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-section-glow">
+        <div className="container grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="relative lg:order-1">
+            <div className="absolute -left-10 -top-8 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
+            <div className="absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-lilac/20 blur-2xl" />
+            <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift lg:mx-0">
+              <Image
+                src={kisiselHikayeImage}
+                alt="Kişisel hikaye"
+                width={520}
+                height={640}
+                className="h-[420px] w-full object-cover md:h-[480px]"
+              />
+            </div>
+          </div>
+          <div className="space-y-5 lg:order-2">
+            <p className="section-kicker">Kişisel Hikâye</p>
+            <h2 className="section-title">Bu Yolculuk Nasıl Başladı?</h2>
+            <p className="text-ink-muted">
+              Girişimcilik yolculuğum 20 yıl önce, kendi ayaklarımın üzerinde durma kararıyla
+              başladı. Farklı sistemleri deneyimledim, ekipler kurdum, hatalar yaptım ve her
+              deneyimden güçlü dersler çıkardım.
+            </p>
+            <p className="text-ink-muted">
+              Zamanla şunu fark ettim: Başarı tesadüf değil, sistem işidir. Disiplin, doğru liderlik
+              ve sürdürülebilir bir model olmadan gelir kalıcı olmaz.
+            </p>
+            <p className="text-ink-muted">
+              Bugün edindiğim saha tecrübesini paylaşarak, girişimcilerin daha sağlam, daha bilinçli
+              ve sistemli adımlar atmasına rehberlik ediyorum. Amacım sadece kazandırmak değil;
+              kalıcı bir yapı kurdurmak.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="space-y-5">
+            <p className="section-kicker">Neden Ben?</p>
+            <h2 className="section-title">Neden Songül Babacan ile Çalışmalısınız?</h2>
+            <p className="text-ink-muted">
+              20 yılı aşkın saha deneyimimle, network marketing ve dijital satış alanında
+              sürdürülebilir sistemler kurmaya odaklanıyorum.
+            </p>
+            <p className="text-ink-muted">
+              Benimle çalıştığınızda yalnızca bir iş modeli değil; planlı, ölçülebilir ve uzun
+              vadeli bir gelir yapısı inşa etmeyi öğrenirsiniz.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="absolute -left-10 -top-8 h-24 w-24 rounded-full bg-brand/10 blur-2xl" />
+            <div className="absolute -bottom-10 -right-6 h-32 w-32 rounded-full bg-lilac/20 blur-2xl" />
+            <div className="relative mx-auto max-w-md overflow-hidden rounded-2xl border border-white/60 bg-white/80 shadow-lift lg:mx-0">
+              <Image
+                src={nedenBenImage}
+                alt="Songül Babacan ile çalışma"
                 width={520}
                 height={640}
                 className="h-[420px] w-full object-cover md:h-[480px]"
