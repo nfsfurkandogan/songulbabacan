@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import FarmasiKayitFormuForm from "@/components/farmasi-kayit-formu-form";
 import uyelikImage from "@/assets/img/uyelik.jpeg";
+import farmasiLogo from "@/assets/img/farmasi-logo.png";
 
 export const metadata = createMetadata({
   title: "Farmasi Üyelik Başvuru Formu",
@@ -18,6 +19,14 @@ export default function FarmasiKayitFormuPage() {
       <section className="section bg-hero-sheen hero-compact">
         <div className="container max-w-3xl space-y-6">
           <div className="space-y-4 text-left">
+            <Image
+              src={farmasiLogo}
+              alt="Farmasi logo"
+              width={260}
+              height={80}
+              className="h-auto w-44 md:w-52"
+              priority
+            />
             <p className="section-kicker">FARMASİ RESMİ ÜYELİK</p>
             <h1 className="text-4xl font-semibold md:text-6xl">FARMASİ ÜYELİK</h1>
             <h2 className="text-2xl font-semibold text-ink md:text-3xl">
