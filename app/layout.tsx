@@ -8,7 +8,7 @@ import Footer from "@/components/footer";
 import WhatsAppFab from "@/components/whatsapp-fab";
 import Analytics from "@/components/analytics";
 import JoinModal from "@/components/join-modal";
-import SongulAssistant from "@/components/songul-assistant";
+import ConditionalSongulAssistant from "@/components/conditional-songul-assistant";
 
 const display = Fraunces({
   subsets: ["latin", "latin-ext"],
@@ -43,7 +43,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <SongulAssistant />
+        <ConditionalSongulAssistant />
         <WhatsAppFab />
         <JoinModal />
         <Analytics />
