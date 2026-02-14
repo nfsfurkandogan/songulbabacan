@@ -32,6 +32,14 @@ export default function FarmasiKayitFormuPage() {
             <h2 className="text-2xl font-semibold text-ink md:text-3xl">
               Ücretsiz Üyelik Başvuru Formu
             </h2>
+            
+          </div>
+          <div className="gradient-border rounded-3xl p-[1px]">
+            <div className="glass-card p-6">
+              <FarmasiKayitFormuForm />
+            </div>
+          </div>
+          <div className="space-y-2 text-left">
             <p className="text-ink-muted md:text-lg">
               Üyelik sürecini başlatmak için kısa formu doldurun. Şartlar ve avantajlar hakkında
               sizinle en kısa sürede iletişime geçelim.
@@ -42,11 +50,6 @@ export default function FarmasiKayitFormuPage() {
             <p className="text-sm text-ink-muted">
               Bilgileriniz gizli tutulur ve yalnızca başvuru süreci kapsamında kullanılır.
             </p>
-          </div>
-          <div className="gradient-border rounded-3xl p-[1px]">
-            <div className="glass-card p-6">
-              <FarmasiKayitFormuForm />
-            </div>
           </div>
         </div>
       </section>
