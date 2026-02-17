@@ -7,7 +7,6 @@ import FarmasiKayitFormuForm from "@/components/farmasi-kayit-formu-form";
 import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import { prImages } from "@/lib/pr-images";
-import heroImage from "@/assets/img/portrait.jpg";
 import valueImage from "@/assets/img/portrait.jpg";
 import trafikImage from "@/assets/img/trafik.jpeg";
 import uzmanlikImage from "@/assets/img/uzmanlik.jpeg";
@@ -34,6 +33,7 @@ const faqItems = [
 ];
 
 const galleryImages = [prImages[1], prImages[2], prImages[4], prImages[5], prImages[8], prImages[10]];
+const heroImage = galleryImages[2];
 
 const experienceItems = [
   {
