@@ -23,6 +23,7 @@ export const siteConfig = {
     { label: "Anasayfa", href: "/" },
     { label: "Hakkında", href: "/hakkinda" },
     { label: "Hizmetlerim", href: "/hizmetlerim" },
+    { label: "Farmasi Üyelik", href: "/farmasi-uyelik-formu" },
     { label: "Kazanç Planı", href: "/kazanc-plani" },
     { label: "Blog", href: "/blog" },
     { label: "İletişim", href: "/iletisim" }
