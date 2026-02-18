@@ -22,3 +22,6 @@ pnpm-debug.log*
 # tooling
 .vercel/
 .turbo/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
