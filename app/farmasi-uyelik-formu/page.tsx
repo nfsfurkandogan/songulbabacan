@@ -1,105 +1,158 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Instagram, MessageCircle, Send } from "lucide-react";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import FarmasiKayitFormuForm from "@/components/farmasi-kayit-formu-form";
 import uyelikImage from "@/assets/img/uyelik.jpeg";
+import trafikImage from "@/assets/img/trafik.jpeg";
+import uzmanlikImage from "@/assets/img/uzmanlik.jpeg";
+import farmasiAracImage from "@/assets/img/farmasi-arac.jpeg";
+import kisiselHikayeImage from "@/assets/img/kisisel-hikaye.jpeg";
+import nedenBenImage from "@/assets/img/neden-ben.jpeg";
 import farmasiLogo from "@/assets/img/farmasi-logo.png";
 
 export const metadata = createMetadata({
   title: "Farmasi Üyelik Başvuru Formu",
   description:
-    "Farmasi üyelik başvuru formu. Kısa formu doldurun; üyelik süreci ve avantajlar hakkında sizi bilgilendirelim.",
+    "Farmasi üyelik, askıda alma, kazanç planı, katalog ve blog için hızlı erişim menüsü ve üyelik başvuru formu.",
   path: "/farmasi-uyelik-formu"
 });
+
+const quickLinks = [
+  {
+    title: "Ücretsiz Üye Ol",
+    href: "#basvuru-formu",
+    image: uyelikImage,
+    external: false
+  },
+  {
+    title: "Askıda Mısın?",
+    href: "/farmasi-askidan-alma",
+    image: trafikImage,
+    external: false
+  },
+  {
+    title: "Üye Girişi",
+    href: "https://www.farmasi.com.tr/kayit-ol",
+    image: uzmanlikImage,
+    external: true
+  },
+  {
+    title: "Kazanç Planı",
+    href: "/kazanc-plani",
+    image: farmasiAracImage,
+    external: false
+  },
+  {
+    title: "Katalog",
+    href: "/katalog",
+    image: kisiselHikayeImage,
+    external: false
+  },
+  {
+    title: "Blog",
+    href: "/blog",
+    image: nedenBenImage,
+    external: false
+  }
+] as const;
+
+const socialLinks = [
+  {
+    title: "Instagram",
+    href: siteConfig.social.instagram,
+    icon: Instagram
+  },
+  {
+    title: "WhatsApp",
+    href: siteConfig.contact.whatsapp,
+    icon: MessageCircle
+  },
+  {
+    title: "Telegram",
+    href: siteConfig.social.telegram,
+    icon: Send
+  }
+] as const;
 
 export default function FarmasiKayitFormuPage() {
   return (
     <>
       <section className="section bg-hero-sheen hero-compact">
-        <div className="container max-w-3xl space-y-6">
-          <div className="space-y-4 text-left">
+        <div className="container max-w-4xl space-y-6">
+          <div className="space-y-4 text-center">
             <Image
               src={farmasiLogo}
               alt="Farmasi logo"
               width={260}
               height={80}
-              className="h-auto w-44 md:w-52"
+              className="mx-auto h-auto w-44 md:w-52"
               priority
             />
-            <p className="section-kicker">FARMASİ RESMİ ÜYELİK</p>
-            <h1 className="text-4xl font-semibold md:text-6xl">FARMASİ ÜYELİK</h1>
-            <h2 className="text-2xl font-semibold text-ink md:text-3xl">
-              Ücretsiz Üyelik Başvuru Formu
-            </h2>
-            
+            <p className="section-kicker">Farmasi Üyelik Uygulaması</p>
+            <h1 className="text-balance text-3xl font-semibold md:text-5xl">
+              Hızlı Menü ve Üyelik Başvuru Sayfası
+            </h1>
+            <div className="overflow-hidden rounded-full border border-border bg-white/80 px-4 py-2 text-sm text-ink-muted">
+              Farmasi üyelik ve kayıt uygulamamıza hoş geldiniz.
+            </div>
           </div>
-          <div className="gradient-border rounded-3xl p-[1px]">
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {quickLinks.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className="group overflow-hidden rounded-3xl border border-border bg-white shadow-soft transition duration-200 hover:-translate-y-1 hover:shadow-lift"
+              >
+                <div className="relative aspect-square">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
+                  />
+                </div>
+                <div className="px-4 py-3 text-center text-sm font-semibold text-ink">{item.title}</div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="rounded-3xl border border-border bg-white/90 p-4 md:p-5">
+            <div className="grid gap-3 md:grid-cols-3">
+              {socialLinks.map((item) => {
+                const Icon = item.icon;
+
+                if (!item.href) return null;
+
+                return (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-ink px-4 py-3 text-sm font-semibold text-white transition hover:bg-ink/90"
+                  >
+                    <Icon className="h-4 w-4" />
+                    {item.title}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          <div id="basvuru-formu" className="gradient-border rounded-3xl p-[1px]">
             <div className="glass-card p-6">
               <FarmasiKayitFormuForm />
+              <p className="mt-4 text-xs text-ink-muted">
+                Bilgileriniz yalnızca başvuru süreci için kullanılır.
+              </p>
             </div>
-          </div>
-          <div className="space-y-2 text-left">
-            <p className="text-ink-muted md:text-lg">
-              Üyelik sürecini başlatmak için kısa formu doldurun. Şartlar ve avantajlar hakkında
-              sizinle en kısa sürede iletişime geçelim.
-            </p>
-            <p className="text-sm font-semibold text-ink">
-              Bu sayfa Farmasi üyelik başvurusu içindir.
-            </p>
-            <p className="text-sm text-ink-muted">
-              Bilgileriniz gizli tutulur ve yalnızca başvuru süreci kapsamında kullanılır.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section pt-6">
-        <div className="container max-w-3xl space-y-6">
-          <div className="glass-card p-6">
-            <p className="text-base font-semibold text-ink">Farmasi’de Yeni Bir Adım</p>
-            <div className="mt-3 space-y-4 text-sm text-ink-muted">
-              <div>
-                <p className="font-semibold text-ink">🌿 Kişisel Destek</p>
-                <p>
-                  Başvuru sonrası size özel danışmanınız süreci birlikte planlar. İlk adımlarınızda
-                  ve sonrasında yanınızda olur.
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold text-ink">🌿 Ücretsiz ve Şeffaf Başlangıç</p>
-                <p>
-                  Üyelik ücretsizdir. Zorunlu ücret veya taahhüt yoktur. 18 yaşını doldurmanız
-                  yeterlidir.
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold text-ink">🌿 Avantaj ve Kazanç İmkanı</p>
-                <p>
-                  Ürünleri indirimli kullanabilir, satış yaparak ek gelir elde edebilir ve
-                  dilerseniz ekibinizi kurarak büyüyebilirsiniz.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="glass-card p-6">
-            <p className="text-base font-semibold text-ink">Güvenle İlerleyin</p>
-            <p className="mt-3 text-sm text-ink-muted">
-              Babacanlar Grup Kurucu Lideri, Asbaşkan Direktör Songül Babacan ekibine hoş geldiniz.
-              Bu yolculukta birlikteyiz.
-            </p>
-          </div>
-
-          <div className="glass-card overflow-hidden p-0">
-            <Image
-              src={uyelikImage}
-              alt="Farmasi üyelik danışmanlığı"
-              width={1200}
-              height={1200}
-              className="h-auto w-full object-cover"
-              sizes="(max-width: 768px) 100vw, 720px"
-            />
           </div>
         </div>
       </section>
@@ -110,7 +163,7 @@ export default function FarmasiKayitFormuPage() {
           "@type": "WebPage",
           name: "Farmasi Üyelik Başvuru Formu",
           description:
-            "Farmasi üyelik başvuru formu. Kısa formu doldurun; üyelik süreci ve avantajlar hakkında hızlıca dönüş yapalım.",
+            "Farmasi üyelik, askıda alma, kazanç planı, katalog ve blog için hızlı erişim menüsü ve üyelik başvuru formu.",
           url: `${siteConfig.url}/farmasi-uyelik-formu`,
           inLanguage: "tr-TR"
         }}
