@@ -5,12 +5,6 @@ import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import FarmasiKayitFormuForm from "@/components/farmasi-kayit-formu-form";
-import uyelikImage from "@/assets/img/uyelik.jpeg";
-import trafikImage from "@/assets/img/trafik.jpeg";
-import uzmanlikImage from "@/assets/img/uzmanlik.jpeg";
-import farmasiAracImage from "@/assets/img/farmasi-arac.jpeg";
-import kisiselHikayeImage from "@/assets/img/kisisel-hikaye.jpeg";
-import nedenBenImage from "@/assets/img/neden-ben.jpeg";
 import farmasiLogo from "@/assets/img/farmasi-logo.png";
 
 export const metadata = createMetadata({
@@ -24,37 +18,37 @@ const quickLinks = [
   {
     title: "Ücretsiz Üye Ol",
     href: "/farmasi-uyelik-formu#basvuru-formu",
-    image: uyelikImage,
+    image: "/generated/uyelik-card.svg",
     external: false
   },
   {
     title: "Askıda Mısın?",
     href: "/farmasi-askidan-alma",
-    image: trafikImage,
+    image: "/generated/askida-card.svg",
     external: false
   },
   {
     title: "Üye Girişi",
     href: "https://www.farmasi.com.tr/kayit-ol",
-    image: uzmanlikImage,
+    image: "/generated/giris-card.svg",
     external: true
   },
   {
     title: "Kazanç Planı",
     href: "/kazanc-plani",
-    image: farmasiAracImage,
+    image: "/generated/kazanc-card.svg",
     external: false
   },
   {
     title: "Katalog",
     href: "/katalog",
-    image: kisiselHikayeImage,
+    image: "/generated/katalog-card.svg",
     external: false
   },
   {
     title: "Blog",
     href: "/blog",
-    image: nedenBenImage,
+    image: "/generated/blog-card.svg",
     external: false
   }
 ] as const;
@@ -88,7 +82,7 @@ export default function FarmasiKayitFormuPage() {
               alt="Farmasi logo"
               width={260}
               height={80}
-              className="mx-auto h-auto w-44 md:w-52"
+              className="mx-auto h-auto w-52 opacity-80 md:w-64"
               priority
             />
             <p className="section-kicker">Farmasi Üyelik Uygulaması</p>
