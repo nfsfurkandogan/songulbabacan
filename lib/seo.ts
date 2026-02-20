@@ -45,6 +45,10 @@ export function createMetadata({ title, description, path = "", image, noIndex }
       description: fullDescription,
       images: [ogImage]
     },
+    icons: {
+      icon: "/favicon.ico"
+    },
+    manifest: "/manifest.webmanifest",
     robots: noIndex ? { index: false, follow: false } : undefined
   };
 }

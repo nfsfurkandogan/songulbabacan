@@ -5,6 +5,7 @@ import type { FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { submitContact } from "@/lib/contact-submit";
 import { siteConfig } from "@/lib/siteConfig";
 
 export default function ContactForm() {
@@ -24,18 +25,12 @@ export default function ContactForm() {
     const message = String(formData.get("message") ?? "").trim();
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          message
-        })
+      await submitContact({
+        name,
+        email,
+        phone,
+        message
       });
-
-      if (!response.ok) throw new Error("Form gönderilemedi");
       setStatus("success");
       form.reset();
     } catch (error) {

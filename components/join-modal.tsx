@@ -6,6 +6,7 @@ import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { joinModalEvent } from "@/lib/events";
 import { siteConfig } from "@/lib/siteConfig";
+import { submitContact } from "@/lib/contact-submit";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -69,18 +70,12 @@ function QuickJoinForm() {
     ].join("\n");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email: email || undefined,
-          phone,
-          message
-        })
+      await submitContact({
+        name,
+        email: email || undefined,
+        phone,
+        message
       });
-
-      if (!response.ok) throw new Error("Gönderilemedi");
       setStatus("success");
       setHint("Başvurunuz alındı. En kısa sürede dönüş yapacağım.");
     } catch (error) {
