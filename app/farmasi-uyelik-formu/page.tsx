@@ -23,7 +23,7 @@ export const metadata = createMetadata({
 const quickLinks = [
   {
     title: "Ücretsiz Üye Ol",
-    href: "#basvuru-formu",
+    href: "/farmasi-uyelik-formu#basvuru-formu",
     image: uyelikImage,
     external: false
   },
