@@ -7,7 +7,7 @@ export interface ContactSubmitPayload {
   address?: string;
 }
 
-const ENDPOINTS = ["/api/contact", "/contact.php"] as const;
+const ENDPOINTS = ["/contact.php", "/api/contact"] as const;
 
 export async function submitContact(payload: ContactSubmitPayload): Promise<void> {
   let lastError = "Form gönderilemedi";
