@@ -1,0 +1,22 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1080" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFEFE4"/>
+      <stop offset="1" stop-color="#FFD5BD"/>
+    </linearGradient>
+    <linearGradient id="card" x1="360" y1="260" x2="860" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#FFF8F2" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" rx="96" fill="url(#bg)"/>
+  <circle cx="1020" cy="180" r="170" fill="#FFFFFF" fill-opacity="0.35"/>
+  <circle cx="170" cy="1030" r="210" fill="#FFFFFF" fill-opacity="0.3"/>
+  <rect x="280" y="220" width="640" height="760" rx="48" fill="url(#card)"/>
+  <circle cx="600" cy="470" r="140" fill="#FFB88F"/>
+  <path d="M600 380C558.026 380 524 414.026 524 456C524 497.974 558.026 532 600 532C641.974 532 676 497.974 676 456C676 414.026 641.974 380 600 380Z" fill="white"/>
+  <path d="M456 772C456 692.472 520.472 628 600 628C679.528 628 744 692.472 744 772V788H456V772Z" fill="white"/>
+  <circle cx="820" cy="780" r="120" fill="#F44A8B"/>
+  <rect x="804" y="708" width="32" height="144" rx="16" fill="white"/>
+  <rect x="748" y="764" width="144" height="32" rx="16" fill="white"/>
+</svg>

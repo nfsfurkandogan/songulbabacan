@@ -1,0 +1,21 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="120" x2="1100" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EAF6FF"/>
+      <stop offset="1" stop-color="#C9E7FF"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="320" y1="260" x2="870" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4CA5FF"/>
+      <stop offset="1" stop-color="#2D6DEB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" rx="96" fill="url(#bg)"/>
+  <circle cx="200" cy="180" r="130" fill="#FFFFFF" fill-opacity="0.4"/>
+  <circle cx="990" cy="980" r="190" fill="#FFFFFF" fill-opacity="0.35"/>
+  <circle cx="600" cy="600" r="290" fill="white"/>
+  <circle cx="600" cy="600" r="260" fill="url(#ring)"/>
+  <circle cx="600" cy="600" r="200" fill="white"/>
+  <rect x="520" y="500" width="56" height="200" rx="24" fill="#2D6DEB"/>
+  <rect x="624" y="500" width="56" height="200" rx="24" fill="#2D6DEB"/>
+  <path d="M350 860C350 730.995 454.995 626 584 626H616C745.005 626 850 730.995 850 860V880H350V860Z" fill="#DDEEFF"/>
+</svg>
