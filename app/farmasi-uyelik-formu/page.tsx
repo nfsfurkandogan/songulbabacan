@@ -331,8 +331,8 @@ export default function FarmasiKayitFormuPage() {
             <p className="section-kicker">Sosyal Medyalar</p>
           </div>
           <div className="rounded-3xl border border-border bg-white/90 p-4 md:p-5">
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
-              {socialLinks.map((item, index) => {
+            <div className="mx-auto grid max-w-sm grid-cols-1 gap-2 sm:max-w-none sm:grid-cols-2 md:grid-cols-3">
+              {socialLinks.map((item) => {
                 const Icon = item.icon;
 
                 if (!item.href) return null;
@@ -343,9 +343,7 @@ export default function FarmasiKayitFormuPage() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center justify-center gap-2 rounded-2xl bg-ink px-4 py-3 text-sm font-semibold text-white transition hover:bg-ink/90 ${
-                      index === socialLinks.length - 1 ? "col-span-2 md:col-span-1" : ""
-                    }`}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-ink px-3 py-2 text-xs font-semibold text-white transition hover:bg-ink/90 sm:text-sm"
                   >
                     <Icon className="h-4 w-4" />
                     {item.title}
