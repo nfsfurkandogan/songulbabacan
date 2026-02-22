@@ -87,7 +87,7 @@ export default function FarmasiKayitFormuPage() {
       <section className="section hero-compact !pt-8 md:!pt-10 bg-[#f4edf5]">
         <div className="container max-w-4xl space-y-5 md:space-y-6">
           <div className="rounded-[28px] bg-brand-dark p-6 text-center text-white shadow-lift md:p-10">
-            <div className="mx-auto inline-flex rounded-2xl bg-white px-6 py-4 shadow-soft md:px-8 md:py-5">
+            <div className="mx-auto inline-flex rounded-2xl bg-white px-4 py-2.5 shadow-soft md:px-5 md:py-3">
               <Image
                 src={farmasiLogo}
                 alt="Farmasi logo"
