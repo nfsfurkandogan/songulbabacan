@@ -103,29 +103,6 @@ export default function FarmasiKayitFormuPage() {
             <p className="text-sm font-medium text-ink-muted">Ücretsiz üyeliğini oluştur</p>
           </div>
 
-          <div className="rounded-3xl border border-border bg-white/90 p-4 md:p-5">
-            <div className="grid gap-3 sm:grid-cols-3">
-              {socialLinks.map((item) => {
-                const Icon = item.icon;
-
-                if (!item.href) return null;
-
-                return (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-ink px-4 py-3 text-sm font-semibold text-white transition hover:bg-ink/90"
-                  >
-                    <Icon className="h-4 w-4" />
-                    {item.title}
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-
           <div className="gradient-border rounded-3xl p-[1px] text-left" id="ilk-ekran-formu">
             <div className="glass-card p-4 md:p-6">
               <FarmasiKayitFormuForm
@@ -355,6 +332,35 @@ export default function FarmasiKayitFormuPage() {
             >
               Bloga Git
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="container max-w-4xl">
+          <div className="rounded-3xl border border-border bg-white/90 p-4 md:p-5">
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+              {socialLinks.map((item, index) => {
+                const Icon = item.icon;
+
+                if (!item.href) return null;
+
+                return (
+                  <Link
+                    key={item.title}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center justify-center gap-2 rounded-2xl bg-ink px-4 py-3 text-sm font-semibold text-white transition hover:bg-ink/90 ${
+                      index === socialLinks.length - 1 ? "col-span-2 md:col-span-1" : ""
+                    }`}
+                  >
+                    <Icon className="h-4 w-4" />
+                    {item.title}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
