@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, Lock, MessageCircle, Send } from "lucide-react";
+import { Instagram, MessageCircle, Send } from "lucide-react";
 import { createMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/siteConfig";
 import JsonLd from "@/components/json-ld";
 import FarmasiKayitFormuForm from "@/components/farmasi-kayit-formu-form";
+import farmasiLogo from "@/assets/img/farmasi-logo.png";
 
 export const metadata = createMetadata({
   title: "Farmasi Üyelik Başvuru Formu",
@@ -31,135 +32,121 @@ const socialLinks = [
   }
 ] as const;
 
-type PromoCard = {
+type QuickCard = {
   src: string;
   alt: string;
   href: string;
-  cta: string;
+  title: string;
+  buttonLabel?: string;
+  helperLabel?: string;
   glow?: boolean;
-  helper?: string;
 };
 
-const promoCards: PromoCard[] = [
+const quickCards: QuickCard[] = [
   {
     src: "/uyelik2.jpeg",
     alt: "Farmasi ücretsiz üyelik görseli",
     href: "#uyelik-formu",
-    cta: "Farmasi Üyelik İçin Tıkla",
+    title: "Ücretsiz Üye Ol",
+    buttonLabel: "Farmasi Üyelik İçin Tıkla",
     glow: true,
-    helper: "Ücretsiz üyeliğini oluştur"
+    helperLabel: "Ücretsiz üyeliğini oluştur"
   },
   {
     src: "/uyelik3.jpeg",
     alt: "Farmasi askıdan alma görseli",
     href: "#aski-formu",
-    cta: "Farmasi Askıdan Al",
+    title: "Askıda Mısın?",
+    buttonLabel: "Farmasi Askıdan Al",
     glow: true,
-    helper: "Askıdan Kendini Al"
+    helperLabel: "Askıdan Kendini Al"
   },
   {
     src: "/uyelik4.jpeg",
     alt: "Farmasi kazanç planı görseli",
     href: "/kazanc-plani",
-    cta: "Farmasi Kazanç Planı"
+    title: "Kazanç Planı"
   },
   {
     src: "/uyelik5.jpeg",
     alt: "Farmasi sponsor kod görseli",
     href: "#sponsor-kod",
-    cta: "Farmasi Sponsor Kod"
+    title: "Sponsor Kod"
+  },
+  {
+    src: "/fa11045f-9c2f-417f-867d-3605a40bbd3c.jpeg",
+    alt: "Farmasi blog görseli",
+    href: "#blog-bolumu",
+    title: "Blog"
   }
 ];
 
 export default function FarmasiKayitFormuPage() {
   return (
     <>
-      <section className="section bg-hero-sheen hero-compact">
-        <div className="container max-w-5xl space-y-6 text-center">
-          <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-lift">
+      <section className="section hero-compact bg-[#ededf1]">
+        <div className="container max-w-4xl space-y-5 md:space-y-6">
+          <div className="rounded-[28px] bg-[#ff5b62] p-6 text-center text-white shadow-lift md:p-10">
             <Image
-              src="/uyelik1.jpeg"
-              alt="Farmasi ana görseli"
-              width={1536}
-              height={709}
-              className="h-auto w-full object-cover"
-              sizes="(max-width: 1024px) 100vw, 1200px"
+              src={farmasiLogo}
+              alt="Farmasi logo"
+              width={1179}
+              height={537}
+              className="mx-auto h-auto w-32 brightness-0 invert sm:w-40 md:w-48"
               priority
             />
-          </div>
-
-          <div className="mx-auto w-full max-w-3xl space-y-4 rounded-3xl border border-border bg-white/85 p-5 shadow-soft md:p-8">
-            <p className="text-sm font-semibold text-ink-muted md:text-base">
-              Bağımsız Farmasi Danışman Sayfası
+            <p className="mt-6 text-3xl font-black uppercase tracking-[0.06em] md:text-5xl">
+              Network Marketing
             </p>
-            <h1 className="text-balance text-3xl font-semibold md:text-5xl">Ücretsiz Üye Ol</h1>
-            <p className="text-base text-ink-muted md:text-xl">İndirimli Alışverişe veya Ek Gelire Başla</p>
-            <Link
-              href="#uyelik-formu"
-              className="glow-blink-btn inline-flex min-h-12 w-full max-w-xs items-center justify-center rounded-2xl px-4 py-3 text-center text-sm font-semibold leading-tight text-white sm:max-w-sm md:w-auto md:max-w-none md:px-8 md:text-base"
-            >
-              Farmasi Üyelik İçin Tıkla
-            </Link>
-            <p className="text-sm font-medium text-ink-muted">Ücretsiz üyeliğini oluştur</p>
+            <p className="mt-2 text-3xl font-black uppercase tracking-[0.06em] md:text-5xl">
+              Girişimci Ol
+            </p>
+            <p className="mt-5 text-sm text-white/90 md:text-base">
+              Bu uygulama Babacanlar Grup Başkan Songül Babacan&apos;a aittir.
+            </p>
           </div>
 
-          <div className="gradient-border rounded-3xl p-[1px] text-left" id="ilk-ekran-formu">
-            <div className="glass-card p-4 md:p-6">
-              <FarmasiKayitFormuForm
-                kicker="Üyelik Formu"
-                title="İlk Ekran Üyelik Formu"
-                description="İlk adımı hızlıca atmak için formu doldurun, size hemen dönüş yapalım."
-                submitTopic="Farmasi Üyelik Başvurusu"
-              />
-              <p className="mt-4 text-xs text-ink-muted">
-                Bilgileriniz yalnızca başvuru süreci için kullanılır.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <h1 className="px-2 text-2xl font-semibold text-ink-muted md:text-3xl">
+            Uygulamamıza hoş geldiniz
+          </h1>
 
-      <section className="section pt-0">
-        <div className="container max-w-4xl space-y-6">
-          {promoCards.map((item) => (
-            <Link
-              key={item.src}
-              href={item.href}
-              className="group relative block overflow-hidden rounded-3xl border border-border bg-white shadow-lift"
-            >
-              <div className="relative aspect-square">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  className="object-cover transition duration-500 group-hover:scale-[1.02]"
-                  sizes="(max-width: 1024px) 100vw, 900px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#201132]/52 via-transparent to-transparent" />
-                <div className="absolute inset-x-0 bottom-4 flex flex-col items-center gap-2 px-3 text-center md:bottom-6 md:px-4">
-                  <span
-                    className={`${item.glow ? "glow-blink-btn" : "bg-ink/90 hover:bg-ink"} inline-flex min-h-11 w-full max-w-[16rem] items-center justify-center rounded-2xl px-4 py-2.5 text-center text-sm font-semibold leading-tight text-white transition sm:max-w-[18rem] md:min-h-12 md:max-w-[20rem] md:px-8 md:py-3 md:text-base`}
-                  >
-                    {item.cta}
-                  </span>
-                  {item.helper && (
-                    <span className="inline-flex items-center gap-2 text-xs text-white/95 md:text-sm">
-                      <Lock className="h-4 w-4" />
-                      {item.helper}
-                    </span>
-                  )}
+          <div className="grid grid-cols-2 gap-3 md:gap-5">
+            {quickCards.map((item) => (
+              <Link
+                key={item.src}
+                href={item.href}
+                className="group block rounded-3xl bg-[#dfddeb] p-2 shadow-soft transition hover:-translate-y-0.5"
+              >
+                <div className="overflow-hidden rounded-2xl">
+                  <div className="relative aspect-[4/5] sm:aspect-square">
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 360px"
+                    />
+                    {item.buttonLabel ? (
+                      <div className="absolute inset-x-2 bottom-2 z-10 text-center">
+                        <span
+                          className={`${item.glow ? "glow-blink-btn" : "bg-ink"} inline-flex min-h-10 w-full items-center justify-center rounded-2xl px-3 py-2 text-[11px] font-semibold leading-tight text-white md:text-xs`}
+                        >
+                          {item.buttonLabel}
+                        </span>
+                        {item.helperLabel ? (
+                          <span className="mt-1 inline-block text-[10px] font-medium text-white md:text-xs">
+                            {item.helperLabel}
+                          </span>
+                        ) : null}
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-
-          <div className="text-center">
-            <Link
-              href="#blog-bolumu"
-              className="inline-flex min-h-11 w-full max-w-[14rem] items-center justify-center rounded-2xl bg-ink px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-ink/90 md:min-h-12 md:max-w-none md:px-8 md:py-3 md:text-base"
-            >
-              Blog
-            </Link>
+                <p className="px-1 pb-2 pt-3 text-center text-xl font-semibold text-[#222132] md:text-3xl">
+                  {item.title}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
