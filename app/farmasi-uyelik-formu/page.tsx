@@ -319,7 +319,7 @@ export default function FarmasiKayitFormuPage() {
             </li>
           </ul>
           <p className="text-base text-ink-muted md:text-lg">
-            Bilgiyle büyümek isteyenler için hazırlanmış bu alan, yalnızca kayıt olmak değil; bilinçli
+            Bilgiyle büyümek isteyenler için hazırlanmış bu alan, yalnızca “kayıt olmak” değil; bilinçli
             bir iş modeli kurmak isteyenlere hitap eder.
           </p>
           <p className="text-base text-ink-muted md:text-lg">
@@ -338,6 +338,9 @@ export default function FarmasiKayitFormuPage() {
 
       <section className="section pt-0">
         <div className="container max-w-4xl">
+          <div className="mb-4 text-center">
+            <p className="section-kicker">Sosyal Medyalar</p>
+          </div>
           <div className="rounded-3xl border border-border bg-white/90 p-4 md:p-5">
             <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
               {socialLinks.map((item, index) => {
