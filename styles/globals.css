@@ -90,6 +90,37 @@
     background: linear-gradient(135deg, rgba(230, 0, 126, 0.4), rgba(123, 97, 255, 0.4));
     z-index: -1;
   }
+
+  .glow-blink-btn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #7d3be7, #a537d1);
+    box-shadow: 0 10px 30px rgba(125, 59, 231, 0.35);
+    animation: cta-glow 1.4s ease-in-out infinite;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  .glow-blink-btn::after {
+    content: "";
+    position: absolute;
+    inset: -60% auto auto -40%;
+    width: 50%;
+    height: 220%;
+    transform: rotate(25deg);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.42),
+      rgba(255, 255, 255, 0)
+    );
+    animation: cta-shine 1.8s linear infinite;
+    pointer-events: none;
+  }
+
+  .glow-blink-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+  }
 }
 
 @layer utilities {
@@ -128,6 +159,27 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes cta-glow {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 10px 26px rgba(125, 59, 231, 0.3);
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 0 0 6px rgba(165, 55, 209, 0.18), 0 12px 36px rgba(125, 59, 231, 0.52);
+  }
+}
+
+@keyframes cta-shine {
+  0% {
+    transform: translateX(0) rotate(25deg);
+  }
+  100% {
+    transform: translateX(260%) rotate(25deg);
   }
 }
 

@@ -6,7 +6,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { siteConfig } from "@/lib/siteConfig";
 
-export default function FarmasiKayitFormuForm() {
+type FarmasiKayitFormuFormProps = {
+  kicker?: string;
+  title?: string;
+  description?: string;
+  submitTopic?: string;
+};
+
+export default function FarmasiKayitFormuForm({
+  kicker = "Farmasi Üyelik",
+  title = "Hızlı Başvuru Formu",
+  description = "Ücretsiz danışmanlık ve indirim şifreniz için formu doldurabilirsiniz.",
+  submitTopic = "Farmasi Üyelik Başvurusu"
+}: FarmasiKayitFormuFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
@@ -24,9 +36,9 @@ export default function FarmasiKayitFormuForm() {
     const city = String(formData.get("city") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
 
-    const message = "Farmasi Üyelik Başvurusu";
+    const message = submitTopic;
     const fallbackMessage = [
-      "Farmasi Üyelik Başvurusu",
+      submitTopic,
       `Ad Soyad: ${name}`,
       `Telefon: ${phone}`,
       `Şehir: ${city}`,
@@ -51,7 +63,7 @@ export default function FarmasiKayitFormuForm() {
       form.reset();
     } catch (error) {
       setStatus("error");
-      const subject = encodeURIComponent("Farmasi Üyelik Başvurusu");
+      const subject = encodeURIComponent(submitTopic);
       const body = encodeURIComponent(fallbackMessage);
       setFallbackMailto(`mailto:${siteConfig.contact.email}?subject=${subject}&body=${body}`);
     }
@@ -60,11 +72,9 @@ export default function FarmasiKayitFormuForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-1">
-        <p className="section-kicker">Farmasi Üyelik</p>
-        <h2 className="text-xl font-semibold">Hızlı Başvuru Formu</h2>
-        <p className="text-sm text-ink-muted">
-          Ücretsiz danışmanlık ve indirim şifreniz için formu doldurabilirsiniz.
-        </p>
+        <p className="section-kicker">{kicker}</p>
+        <h2 className="text-xl font-semibold">{title}</h2>
+        <p className="text-sm text-ink-muted">{description}</p>
       </div>
       <div className="grid gap-4">
         <label className="space-y-2 text-sm font-semibold text-ink">
