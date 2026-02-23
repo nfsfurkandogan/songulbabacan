@@ -2,7 +2,7 @@ import Script from "next/script";
 
 export default function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
-  const adsId = "AW-16941296221";
+  const adsId = "AW-17971706740";
   const primaryId = gaId ?? adsId;
   if (!primaryId) return null;
 
