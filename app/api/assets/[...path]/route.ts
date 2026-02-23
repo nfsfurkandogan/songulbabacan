@@ -1,6 +1,8 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
+export const runtime = "nodejs";
+
 type RouteContext = {
   params: {
     path: string[];
@@ -77,4 +79,3 @@ export async function GET(_: Request, context: RouteContext) {
     return new Response("Not Found", { status: 404 });
   }
 }
-
